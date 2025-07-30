@@ -1,6 +1,9 @@
-# SuperDuperDB GUI
+# superduper-webgui (ver 0.2.0)
 
 A web-based GUI for managing SuperDuperDB, built with React, TypeScript, and Vite.
+
+<img width="2480" height="785" alt="superduper-webgui-1" src="https://github.com/user-attachments/assets/a1e2d014-3456-43bb-91b8-d0c70c705aa1" />
+<img width="2478" height="786" alt="superduper-webgui-2" src="https://github.com/user-attachments/assets/c21ac903-9373-41dc-8d9c-6d59748ceb8e" />
 
 ## Setup
 
@@ -53,9 +56,6 @@ Migrated to Vite to resolve vulnerabilities in react-scripts@5.0.1. No known vul
 npm audit
 npm outdated
 
-Versioning
-
-Version: 0.1.1
 Commits are GPG-signed (verified on GitHub).
 
 License
