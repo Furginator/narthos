@@ -18,6 +18,7 @@ const Dashboard: React.FC<DashboardProps> = ({ stats, connectionStatus }) => {
   return (
     <div className="dashboard">
       <div className="welcome-section welcome-animate">
+        <div className="brand-icon">SD</div>
         <h2 className="welcome-title">Welcome to SuperDuperDB</h2>
         <p className="welcome-text">Build end-to-end AI applications and agents on your own data</p>
         <div className="button-group">

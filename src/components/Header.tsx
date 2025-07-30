@@ -50,7 +50,7 @@ const Header: React.FC<HeaderProps> = ({ connectionStatus }) => {
           aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
         >
           {isDarkMode ? <Sun className="theme-icon" /> : <Moon className="theme-icon" />}
-        </div>
+        </button>
         <button
           className="profile-button"
           onClick={() => setShowProfile(!showProfile)}
