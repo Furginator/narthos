@@ -24,8 +24,8 @@ const SystemStatus: React.FC<SystemStatusProps> = ({ connectionStatus }) => {
   };
 
   const statusItems = [
+    { label: 'Narthos Core', status: 'healthy' as SystemItemStatus, details: 'Core services running' },
     { label: 'Database Connection', status: getStatus(connectionStatus), details: 'Connected to primary node' },
-    { label: 'SuperDuperDB Core', status: 'healthy' as SystemItemStatus, details: 'Core services running' },
     { label: 'Model Registry', status: 'healthy' as SystemItemStatus, details: 'All models registered' },
     { label: 'Prediction Engine', status: getStatus(connectionStatus, true), details: 'Engine ready for predictions' },
   ];

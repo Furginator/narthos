@@ -18,8 +18,8 @@ const Dashboard: React.FC<DashboardProps> = ({ stats, connectionStatus }) => {
   return (
     <div className="dashboard">
       <div className="welcome-section welcome-animate">
-        <div className="brand-icon">SD</div>
-        <h2 className="welcome-title">Welcome to SuperDuperDB</h2>
+        <div className="brand-icon">NS</div>
+        <h2 className="welcome-title">Welcome to Narthos</h2>
         <p className="welcome-text">Build end-to-end AI applications and agents on your own data</p>
         <div className="button-group">
           <button className="primary-button" onClick={handleGetStarted}>Get Started</button>

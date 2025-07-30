@@ -64,7 +64,7 @@ const ModelManager: React.FC<ModelManagerProps> = ({ stats, setStats }) => {
           <div className="empty-state">
             <Brain className="empty-state-icon" />
             <h3 className="empty-state-title">No Models Yet</h3>
-            <p className="empty-state-text">Create your first AI model to get started with SuperDuperDB.</p>
+            <p className="empty-state-text">Create your first AI model to get started with Narthos.</p>
             <button className="primary-button" onClick={handleCreateModel}>Create Your First Model</button>
           </div>
         )}

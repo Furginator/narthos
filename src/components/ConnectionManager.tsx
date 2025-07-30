@@ -8,7 +8,7 @@ const ConnectionManager: React.FC<ConnectionManagerProps> = ({ connectionStatus,
   const [connectionForm, setConnectionForm] = useState<ConnectionForm>({
     host: 'localhost',
     port: '27017',
-    database: 'superduper_db',
+    database: 'narthos_db',
     username: '',
     password: ''
   });

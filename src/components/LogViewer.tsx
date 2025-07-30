@@ -3,7 +3,7 @@ import '/src/styles/LogViewer.css';
 
 const LogViewer: React.FC = () => {
   const [logs, setLogs] = useState([
-    '[2024-01-20 10:30:15] SuperDuperDB GUI started',
+    '[2024-01-20 10:30:15] Narthos GUI started',
     '[2024-01-20 10:30:16] Initializing components...',
     '[2024-01-20 10:30:17] Ready for connections',
   ]);

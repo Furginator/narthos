@@ -1,4 +1,4 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import SuperDuperDBGUI from './components/SuperDuperDBGUI';
-ReactDOM.createRoot(document.getElementById('root')!).render(<SuperDuperDBGUI />);
+import NarthosGUI from './components/NarthosGUI';
+ReactDOM.createRoot(document.getElementById('root')!).render(<NarthosGUI />);

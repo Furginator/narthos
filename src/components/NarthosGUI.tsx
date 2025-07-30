@@ -5,7 +5,7 @@ import MainContent from './MainContent';
 import type { Stats, ConnectionStatus } from '../types';
 import '/src/App.css';
 
-const SuperDuperDBGUI: React.FC = () => {
+const NarthosGUI: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>('dashboard');
   const [connectionStatus, setConnectionStatus] = useState<ConnectionStatus>('disconnected');
   const [stats, setStats] = useState<Stats>({
@@ -32,4 +32,4 @@ const SuperDuperDBGUI: React.FC = () => {
   );
 };
 
-export default SuperDuperDBGUI;
+export default NarthosGUI;

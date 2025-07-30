@@ -134,7 +134,7 @@ const Header: React.FC<HeaderProps> = ({ connectionStatus }) => {
           <Database className="logo-icon" />
         </div>
         <div>
-          <h1 className="title">SuperDuperDB</h1>
+          <h1 className="title">Narthos</h1>
           <p className="subtitle">AI Database Framework</p>
         </div>
       </div>
@@ -270,7 +270,7 @@ const Dashboard: React.FC<DashboardProps> = ({ stats, connectionStatus }) => {
   return (
     <div className="dashboard">
       <div className="welcome-section">
-        <h2 className="welcome-title">Welcome to SuperDuperDB</h2>
+        <h2 className="welcome-title">Welcome to Narthos</h2>
         <p className="welcome-text">Build end-to-end AI applications and agents on your own data</p>
         <div className="button-group">
           <button className="primary-button">Get Started</button>
@@ -368,8 +368,8 @@ const SystemStatus: React.FC<SystemStatusProps> = ({ connectionStatus }) => {
   };
 
   const statusItems = [
+    { label: 'Narthos Core', status: 'healthy' as SystemItemStatus },
     { label: 'Database Connection', status: getStatus(connectionStatus) },
-    { label: 'SuperDuperDB Core', status: 'healthy' as SystemItemStatus },
     { label: 'Model Registry', status: 'healthy' as SystemItemStatus },
     { label: 'Prediction Engine', status: getStatus(connectionStatus, true) },
   ];
@@ -405,7 +405,7 @@ const ConnectionManager: React.FC<ConnectionManagerProps> = ({ connectionStatus,
   const [connectionForm, setConnectionForm] = useState<ConnectionForm>({
     host: 'localhost',
     port: '27017',
-    database: 'superduper_db',
+    database: 'narthos_db',
     username: '',
     password: ''
   });
@@ -598,7 +598,7 @@ const ModelManager: React.FC<ModelManagerProps> = ({ stats, setStats }) => {
       <div className="empty-state">
         <Brain className="empty-state-icon" />
         <h3 className="empty-state-title">No Models Yet</h3>
-        <p className="empty-state-text">Create your first AI model to get started with SuperDuperDB.</p>
+        <p className="empty-state-text">Create your first AI model to get started with Narthos.</p>
         <button className="primary-button">Create Your First Model</button>
       </div>
     </div>
@@ -640,7 +640,7 @@ const LogViewer: React.FC = () => {
       <h2 className="log-title">System Logs</h2>
       <div className="activity-card">
         <div className="log-container">
-          <div>[2024-01-20 10:30:15] SuperDuperDB GUI started</div>
+          <div>[2024-01-20 10:30:15] Narthos GUI started</div>
           <div>[2024-01-20 10:30:16] Initializing components...</div>
           <div>[2024-01-20 10:30:17] Ready for connections</div>
           <div className="log-cursor">_</div>
