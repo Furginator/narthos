@@ -1,0 +1,44 @@
+.data-manager {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.data-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.collection-table {
+  margin-bottom: 24px;
+}
+
+.collection-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.collection-table th, .collection-table td {
+  padding: 8px;
+  border: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.collection-table th {
+  background-color: #f3f4f6;
+  font-weight: 600;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.delete-icon {
+  color: #ef4444;
+  width: 20px;
+  height: 20px;
+}

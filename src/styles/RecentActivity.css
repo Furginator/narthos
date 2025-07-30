@@ -1,0 +1,67 @@
+.activity-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.activity-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.activity-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.activity-filter {
+  margin-bottom: 24px;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.activity-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.activity-dot-success {
+  background-color: #10b981;
+}
+
+.activity-dot-info {
+  background-color: #3b82f6;
+}
+
+.activity-content {
+  flex: 1;
+}
+
+.activity-text {
+  font-size: 14px;
+  color: #374151;
+}
+
+.activity-action {
+  font-weight: 600;
+}
+
+.activity-target {
+  color: #6b7280;
+}
+
+.activity-time {
+  font-size: 12px;
+  color: #6b7280;
+}

@@ -1,0 +1,175 @@
+.connection-manager {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.connection-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.connection-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.connect-text {
+  font-size: 16px;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+.provider-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.provider-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.provider-button-active {
+  border-color: #3b82f6;
+  background-color: #eff6ff;
+}
+
+.provider-icon {
+  font-size: 24px;
+}
+
+.provider-name {
+  font-size: 14px;
+  color: #374151;
+}
+
+.connection-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.form-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.form-full-width {
+  grid-column: 1 / -1;
+}
+
+.connection-string {
+  margin-bottom: 24px;
+}
+
+.connection-string-value {
+  font-family: monospace;
+  font-size: 14px;
+  color: #374151;
+  background-color: #f3f4f6;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.connection-success {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.success-icon {
+  width: 24px;
+  height: 24px;
+  color: #10b981;
+}
+
+.connection-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detail-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.detail-value {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.detail-value-active {
+  color: #10b981;
+  font-weight: 500;
+}
+
+.disconnect-button {
+  background-color: #ef4444;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.disconnect-button:hover {
+  background-color: #dc2626;
+}
+
+.connection-log {
+  margin-top: 24px;
+}
+
+.connection-log .log-container {
+  background-color: #111827;
+  color: #10b981;
+  padding: 16px;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.saved-connections {
+  margin-top: 24px;
+}
+
+.saved-connections-list {
+  list-style: none;
+  padding: 0;
+}
+
+.saved-connection-button {
+  background: none;
+  border: none;
+  color: #3b82f6;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px;
+}
