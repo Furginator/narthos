@@ -6,12 +6,8 @@ A web-based GUI for managing SuperDuperDB, built with React, TypeScript, and Vit
 
 ### Frontend
 1. Install Node.js (>=20.19.0): https://nodejs.org
-2. Install dependencies:
-   ```bash
-   npm install
-
-
-Run the app:npm run dev
+2. Install dependencies: npm install
+3. Run the app: npm run dev
 
 Access at http://localhost:5173.
 
