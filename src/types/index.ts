@@ -19,6 +19,7 @@ export interface ConnectionIndicatorProps {
 export interface SidebarProps {
   activeTab: string;
   setActiveTab: (tab: string) => void;
+  stats?: { activeModels: number }; // Add stats prop
 }
 
 export interface QuickActionButtonProps {

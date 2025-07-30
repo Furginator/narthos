@@ -4,13 +4,13 @@ import type { SidebarProps } from '../types';
 import QuickActionButton from './QuickActionButton';
 import './styles/Sidebar.css';
 
-const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => {
+const Sidebar: React.FC<SidebarProps & { stats: { activeModels: number } }> = ({ activeTab, setActiveTab, stats }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   const navigation = [
     { id: 'dashboard', label: 'Dashboard', icon: BarChart3 },
     { id: 'connections', label: 'Connections', icon: Database },
-    { id: 'models', label: 'Models', icon: Brain },
+    { id: 'models', label: 'Models', icon: Brain, badge: stats.activeModels },
     { id: 'data', label: 'Data', icon: FileText },
     { id: 'predictions', label: 'Predictions', icon: Zap },
     { id: 'logs', label: 'Logs', icon: Terminal }
@@ -54,7 +54,14 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => {
               aria-label={item.label}
             >
               <Icon className="nav-icon" />
-              {!isCollapsed && <span>{item.label}</span>}
+              {!isCollapsed && (
+                <span className="nav-label">
+                  {item.label}
+                  {item.badge !== undefined && item.badge > 0 && (
+                    <span className="badge">{item.badge}</span>
+                  )}
+                </span>
+              )}
             </button>
           );
         })}

@@ -12,5 +12,6 @@
     "types": ["node", "vite/client"],
     "typeRoots": ["./node_modules/@types", "./src/styles"]
   },
-  "include": ["src"]
+  "extends": "./tsconfig.app.json",
+  "include": ["src", "vite.config.ts"],
 }

@@ -19,7 +19,7 @@ const SuperDuperDBGUI: React.FC = () => {
     <div className="app">
       <Header connectionStatus={connectionStatus} />
       <div className="main-layout">
-        <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
+        <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} stats={stats} />
         <MainContent 
           activeTab={activeTab} 
           connectionStatus={connectionStatus}

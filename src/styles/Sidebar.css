@@ -6,6 +6,11 @@
   transition: width 0.3s ease;
 }
 
+.dark .sidebar {
+  background-color: #1f2937;
+  border-color: #4b5563;
+}
+
 .sidebar-collapsed {
   width: 60px;
 }
@@ -23,6 +28,10 @@
   width: 20px;
   height: 20px;
   color: #374151;
+}
+
+.dark .collapse-icon {
+  color: #f9fafb;
 }
 
 .nav {
@@ -47,6 +56,10 @@
   justify-content: center;
 }
 
+.dark .nav-button {
+  color: #f9fafb;
+}
+
 .nav-button-active {
   background-color: #3b82f6;
   color: white;
@@ -60,9 +73,27 @@
   background-color: #f3f4f6;
 }
 
+.dark .nav-button-inactive:hover {
+  background-color: #4b5563;
+}
+
 .nav-icon {
   width: 24px;
   height: 24px;
+}
+
+.nav-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.badge {
+  background-color: #ef4444;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 9999px;
 }
 
 .sidebar-collapsed .nav-button span {
@@ -78,11 +109,19 @@
   border-top: 1px solid #e5e7eb;
 }
 
+.dark .quick-actions {
+  border-color: #4b5563;
+}
+
 .quick-actions-title {
   font-size: 14px;
   font-weight: 600;
   color: #374151;
   margin-bottom: 16px;
+}
+
+.dark .quick-actions-title {
+  color: #f9fafb;
 }
 
 .quick-actions-container {
