@@ -98,7 +98,7 @@ interface DatabaseProvider {
 }
 
 // Main App Component
-const SuperDuperDBGUI: React.FC = () => {
+const NarthosGUI: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>('dashboard');
   const [connectionStatus, setConnectionStatus] = useState<ConnectionStatus>('disconnected');
   const [stats, setStats] = useState<Stats>({
@@ -650,4 +650,4 @@ const LogViewer: React.FC = () => {
   );
 };
 
-export default SuperDuperDBGUI;
+export default NarthosGUI;

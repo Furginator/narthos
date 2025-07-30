@@ -32,7 +32,7 @@ Run both environments: Ctrl+Shift+B > Start All (uses .vscode/tasks.json).
 
 Structure
 
-src/components/: React components (SuperDuperDBGUI.tsx, Header.tsx, etc.).
+src/components/: React components (NarthosGUI.tsx, Header.tsx, etc.).
 src/styles/: Component-specific CSS (App.css, Header.css, etc.).
 src/types/: TypeScript type definitions (index.ts).
 src/main.tsx: Entry point for the Vite app.

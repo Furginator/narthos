@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import SuperDuperDBGUI from './components/SuperDuperDBGUI';
+import NarthosGUI from './components/NarthosGUI';
 import '/src/App.css'; // Global styles
 
-ReactDOM.createRoot(document.getElementById('root')!).render(<SuperDuperDBGUI />);
+ReactDOM.createRoot(document.getElementById('root')!).render(<NarthosGUI />);

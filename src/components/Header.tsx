@@ -22,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({ connectionStatus }) => {
           <Database className="logo-icon" />
         </div>
         <div>
-          <h1 className="title">SuperDuperDB</h1>
+          <h1 className="title">Narthos</h1>
           <p className="subtitle">AI Database Framework</p>
         </div>
       </div>
