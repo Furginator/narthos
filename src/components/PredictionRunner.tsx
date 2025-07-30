@@ -5,10 +5,27 @@ import './styles/PredictionRunner.css';
 const PredictionRunner: React.FC = () => {
   const [modelName, setModelName] = useState('');
   const [inputData, setInputData] = useState('');
+  const [results, setResults] = useState<string[]>([]);
 
-  const handleRunPrediction = () => {
+  const handleRunPrediction = async () => {
     if (modelName.trim() && inputData.trim()) {
-      alert(`Running prediction with model ${modelName} on input: ${inputData}`);
+      try {
+        const response = await fetch('http://localhost:8000/predict', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ model: modelName, input: inputData })
+        });
+        const result = await response.json();
+        if (result.status === 'success') {
+          setResults(prev => [...prev, `Prediction for ${modelName}: ${result.output}`]);
+        } else {
+          setResults(prev => [...prev, `Prediction failed: ${result.message}`]);
+          alert(`Prediction failed: ${result.message}`);
+        }
+      } catch (e) {
+        setResults(prev => [...prev, `Prediction failed: ${e}`]);
+        alert(`Prediction failed: ${e}`);
+      }
       setInputData('');
     }
   };
@@ -42,6 +59,18 @@ const PredictionRunner: React.FC = () => {
           />
         </div>
         <button className="primary-button" onClick={handleRunPrediction}>Run Prediction</button>
+      </div>
+      <div className="prediction-results">
+        <h3 className="results-title">Prediction Results</h3>
+        {results.length > 0 ? (
+          <ul className="results-list">
+            {results.map((result, index) => (
+              <li key={index}>{result}</li>
+            ))}
+          </ul>
+        ) : (
+          <p>No predictions yet.</p>
+        )}
       </div>
       <div className="empty-state">
         <Zap className="empty-state-icon" />

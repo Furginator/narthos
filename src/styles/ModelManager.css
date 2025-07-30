@@ -46,9 +46,25 @@
   padding: 0;
 }
 
-.model-list-items li {
+.model-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 8px;
   border-bottom: 1px solid #e5e7eb;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.delete-icon {
+  color: #ef4444;
+  width: 20px;
+  height: 20px;
 }
 
 .empty-state {
