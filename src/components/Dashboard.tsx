@@ -9,7 +9,6 @@ import './styles/Dashboard.css';
 const Dashboard: React.FC<DashboardProps> = ({ stats, connectionStatus }) => {
   const handleGetStarted = () => {
     alert('Redirecting to onboarding guide...');
-    // Future: window.location.href = 'https://docs.superduperdb.com/onboarding';
   };
 
   const handleViewDocs = () => {
@@ -18,7 +17,7 @@ const Dashboard: React.FC<DashboardProps> = ({ stats, connectionStatus }) => {
 
   return (
     <div className="dashboard">
-      <div className="welcome-section">
+      <div className="welcome-section welcome-animate">
         <h2 className="welcome-title">Welcome to SuperDuperDB</h2>
         <p className="welcome-text">Build end-to-end AI applications and agents on your own data</p>
         <div className="button-group">
