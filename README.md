@@ -1,4 +1,4 @@
-# superduper-webgui (ver 0.2.0)
+# Narthos (ver 0.3.0)
 
 A web-based GUI for managing SuperDuperDB, built with React, TypeScript, and Vite.
 
