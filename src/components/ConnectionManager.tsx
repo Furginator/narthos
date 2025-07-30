@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { CheckCircle } from 'lucide-react';
 import type { ConnectionManagerProps, ConnectionForm, DatabaseProvider, Stats } from '../types';
-import './styles/ConnectionManager.css';
+import '/src/styles/ConnectionManager.css';
 
 const ConnectionManager: React.FC<ConnectionManagerProps> = ({ connectionStatus, setConnectionStatus, stats, setStats }) => {
   const [selectedProvider, setSelectedProvider] = useState<string>('mongodb');

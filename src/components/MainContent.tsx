@@ -6,7 +6,7 @@ import ModelManager from './ModelManager';
 import DataManager from './DataManager';
 import PredictionRunner from './PredictionRunner';
 import LogViewer from './LogViewer';
-import './styles/MainContent.css';
+import '/src/styles/MainContent.css';
 
 const MainContent: React.FC<MainContentProps> = ({ activeTab, connectionStatus, setConnectionStatus, stats, setStats }) => {
   const renderContent = () => {

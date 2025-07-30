@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { RefreshCw } from 'lucide-react';
 import type { SystemStatusProps, SystemItemStatus, ConnectionStatus } from '../types';
-import './styles/SystemStatus.css';
+import '/src/styles/SystemStatus.css';
 
 const SystemStatus: React.FC<SystemStatusProps> = ({ connectionStatus }) => {
   const [refreshCount, setRefreshCount] = useState(0);

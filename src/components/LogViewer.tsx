@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './styles/LogViewer.css';
+import '/src/styles/LogViewer.css';
 
 const LogViewer: React.FC = () => {
   const [logs, setLogs] = useState([

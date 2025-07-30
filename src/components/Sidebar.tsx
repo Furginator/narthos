@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BarChart3, Database, Brain, FileText, Zap, Terminal, Plus, Play, Search, Upload, ChevronLeft, ChevronRight } from 'lucide-react';
 import type { SidebarProps } from '../types';
 import QuickActionButton from './QuickActionButton';
-import './styles/Sidebar.css';
+import '/src/styles/Sidebar.css';
 
 const Sidebar: React.FC<SidebarProps & { stats: { activeModels: number } }> = ({ activeTab, setActiveTab, stats }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Zap } from 'lucide-react';
-import './styles/PredictionRunner.css';
+import '/src/styles/PredictionRunner.css';
 
 const PredictionRunner: React.FC = () => {
   const [modelName, setModelName] = useState('');

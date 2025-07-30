@@ -3,7 +3,7 @@ import Header from './Header';
 import Sidebar from './Sidebar';
 import MainContent from './MainContent';
 import type { Stats, ConnectionStatus } from '../types';
-import './App.css';
+import '/src/App.css';
 
 const SuperDuperDBGUI: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>('dashboard');

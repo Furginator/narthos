@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import type { StatCardProps } from '../types';
-import './styles/StatCard.css';
+import '/src/styles/StatCard.css';
 
 const StatCard: React.FC<StatCardProps> = ({ title, value, icon: Icon, color }) => {
   const [showTooltip, setShowTooltip] = useState(false);

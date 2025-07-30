@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FileText, Trash2, RefreshCw } from 'lucide-react';
-import './styles/DataManager.css';
+import '/src/styles/DataManager.css';
 
 const DataManager: React.FC = () => {
   const [collections, setCollections] = useState([

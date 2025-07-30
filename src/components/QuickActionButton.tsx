@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import type { QuickActionButtonProps } from '../types';
-import './styles/QuickActionButton.css';
+import '/src/styles/QuickActionButton.css';
 
 interface ExtendedQuickActionButtonProps extends QuickActionButtonProps {
   onClick?: () => void;

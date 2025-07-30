@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './styles/RecentActivity.css';
+import '/src/styles/RecentActivity.css';
 
 const RecentActivity: React.FC = () => {
   const [filter, setFilter] = useState('');

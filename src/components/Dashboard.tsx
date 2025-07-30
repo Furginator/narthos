@@ -4,7 +4,7 @@ import type { DashboardProps } from '../types';
 import StatCard from './StatCard';
 import RecentActivity from './RecentActivity';
 import SystemStatus from './SystemStatus';
-import './styles/Dashboard.css';
+import '/src/styles/Dashboard.css';
 
 const Dashboard: React.FC<DashboardProps> = ({ stats, connectionStatus }) => {
   const [isLoading, setIsLoading] = useState(true);

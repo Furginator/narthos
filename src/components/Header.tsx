@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Database, Settings, Moon, Sun, User } from 'lucide-react';
 import type { HeaderProps } from '../types';
 import ConnectionIndicator from './ConnectionIndicator';
-import './styles/Header.css';
+import '/src/styles/Header.css';
 
 const Header: React.FC<HeaderProps> = ({ connectionStatus }) => {
   const [showStatus, setShowStatus] = useState(false);

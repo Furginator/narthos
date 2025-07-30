@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { AlertCircle, CheckCircle, Clock } from 'lucide-react';
 import type { ConnectionIndicatorProps } from '../types';
-import './styles/ConnectionIndicator.css';
+import '/src/styles/ConnectionIndicator.css';
 
 const ConnectionIndicator: React.FC<ConnectionIndicatorProps> = ({ status }) => {
   const [showTooltip, setShowTooltip] = useState(false);
