@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FileText, Trash2 } from 'lucide-react';
+import { FileText, Trash2, RefreshCw } from 'lucide-react';
 import './styles/DataManager.css';
 
 const DataManager: React.FC = () => {
@@ -7,15 +7,30 @@ const DataManager: React.FC = () => {
     { id: 1, name: 'users', size: '1.2 MB', records: 1000 },
     { id: 2, name: 'products', size: '3.5 MB', records: 5000 },
   ]);
+  const [refreshCount, setRefreshCount] = useState(0);
 
   const handleDelete = (id: number) => {
     setCollections(prev => prev.filter(collection => collection.id !== id));
     alert(`Deleted collection with ID ${id}`);
   };
 
+  const handleRefresh = () => {
+    setRefreshCount(prev => prev + 1);
+    alert('Refreshed collections');
+  };
+
   return (
     <div className="data-manager">
-      <h2 className="data-title">Data Management</h2>
+      <div className="data-header">
+        <h2 className="data-title">Data Management (Refreshed {refreshCount} times)</h2>
+        <button
+          className="secondary-button"
+          onClick={handleRefresh}
+          aria-label="Refresh collections"
+        >
+          <RefreshCw className="refresh-icon" />
+        </button>
+      </div>
       <div className="collection-table">
         <table>
           <thead>

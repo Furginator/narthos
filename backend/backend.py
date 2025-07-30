@@ -24,7 +24,6 @@ async def connect_db(request: ConnectionRequest):
 @app.post("/predict")
 async def run_prediction(request: PredictionRequest):
     try:
-        # Placeholder: Implement SuperDuperDB prediction logic
         output = f"Mock prediction for {request.model} on {request.input}"
         return {"status": "success", "output": output}
     except Exception as e:
