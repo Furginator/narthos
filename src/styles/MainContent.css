@@ -1,14 +1,16 @@
 .main-content {
   flex: 1;
   padding: 24px;
-  background-color: #f9fafb;
+  background-color: white;
+  color: #111827;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark .main-content {
+  background-color: #1f2937;
+  color: #f9fafb;
 }
 
 .tab-content {
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  width: 100%;
 }

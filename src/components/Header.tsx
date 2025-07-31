@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Settings, Moon, Sun, User } from 'lucide-react';
+import { Settings, Moon, Sun, User, CheckCircle, AlertCircle } from 'lucide-react';
 import type { HeaderProps } from '../types';
 import ConnectionIndicator from './ConnectionIndicator';
 import '/src/styles/Header.css';
 
 const Header: React.FC<HeaderProps> = ({ connectionStatus }) => {
-  const [showStatus, setShowStatus] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -16,29 +15,40 @@ const Header: React.FC<HeaderProps> = ({ connectionStatus }) => {
     document.documentElement.classList.toggle('dark', !isDarkMode);
   };
 
+  const getStatusColor = (status: string) => {
+    switch (status.toLowerCase()) {
+      case 'connected': case 'online': return 'green';
+      case 'connecting': return 'yellow';
+      default: return 'red';
+    }
+  };
+
+  const stats = {
+    Database: connectionStatus,
+    CPU: 'Online', // Placeholder, replace with actual data
+    Memory: 'Online', // Placeholder
+    Storage: 'Online', // Placeholder
+  };
+
   return (
     <header className="header">
       <div className="header-left">
-        <div className="logo">
-          <img src="/narthos-logo.png" alt="Narthos Logo" className="logo-icon" width="120" height="120" />
-        </div>
-        <div>
-          <h1 className="title">Narthos</h1>
-          <p className="subtitle">Hello, {userName}!</p>
-        </div>
+        <img src="/narthos-logo.png" alt="Narthos Logo" className="logo-icon" width="120" height="120" />
+      </div>
+      <div className="status-switchboard">
+        {Object.entries(stats).map(([key, value]) => (
+          <div key={key} className="status-box">
+            <span className="status-label">{key.charAt(0).toUpperCase() + key.slice(1)}: </span>
+            {value.toLowerCase() === 'connected' || value.toLowerCase() === 'online' ? (
+              <CheckCircle className="status-icon" color={getStatusColor(value)} />
+            ) : (
+              <AlertCircle className="status-icon" color={getStatusColor(value)} />
+            )}
+            <span className="status-text">{value}</span>
+          </div>
+        ))}
       </div>
       <div className="header-right">
-        <div className="status-dropdown">
-          <button className="status-button" onClick={() => setShowStatus(!showStatus)} aria-label="Toggle connection status">
-            <ConnectionIndicator status={connectionStatus} />
-          </button>
-          {showStatus && (
-            <div className="status-menu">
-              <p>Status: {connectionStatus}</p>
-              <button className="secondary-button" onClick={() => setShowStatus(false)}>Close</button>
-            </div>
-          )}
-        </div>
         <button className="theme-toggle-button" onClick={handleThemeToggle} aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}>
           {isDarkMode ? <Sun className="theme-icon" /> : <Moon className="theme-icon" />}
         </button>

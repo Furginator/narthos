@@ -1,12 +1,12 @@
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 10px 10px;
+  align-items: flex-start;
+  padding: 10px 24px;
   background-color: white;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   position: relative;
-  min-height: 120px; /* Adjusted for larger logo */
+  min-height: 140px;
 }
 
 .dark .header {
@@ -16,7 +16,7 @@
 
 .header-left {
   display: flex;
-  align-items: flex-start; /* Aligns logo and text at the top */
+  align-items: flex-start;
   gap: 16px;
 }
 
@@ -28,26 +28,166 @@
 .logo-icon {
   max-width: 120px;
   max-height: 120px;
-  object-fit: contain; /* Scales without distortion */
+  object-fit: contain;
 }
 
-.title {
-  font-size: 24px;
-  font-weight: 700;
+.status-switchboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  gap: 20px;
+}
+
+.status-box {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 120px;
+  text-align: center;
+}
+
+.dark .status-box {
+  background-color: #374151;
+}
+
+.status-label {
+  font-size: 14px;
   color: #111827;
-  margin-top: 20px; /* Offset for logo alignment */
+  white-space: nowrap;
 }
 
-.dark .title {
+.dark .status-label {
   color: #f9fafb;
 }
 
-.subtitle {
+.status-text {
   font-size: 14px;
-  color: #6b7280;
-  margin-top: 5px;
+  color: #111827;
 }
 
-.dark .subtitle {
-  color: #9ca3af;
+.dark .status-text {
+  color: #f9fafb;
+}
+
+.status-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.theme-toggle-button, .profile-button, .settings-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.theme-icon, .profile-icon, .settings-icon {
+  width: 24px;
+  height: 24px;
+  color: #374151;
+}
+
+.dark .theme-icon, .dark .profile-icon, .dark .settings-icon {
+  color: #f9fafb;
+}
+
+.profile-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.dark .profile-menu {
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #f9fafb;
+}
+
+.profile-menu p {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.dark .profile-menu p {
+  color: #f9fafb;
+}
+
+.settings-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+}
+
+.settings-modal-content {
+  background: white;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+}
+
+.dark .settings-modal-content {
+  background: #1f2937;
+  color: #f9fafb;
+}
+
+.settings-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.dark .settings-title {
+  color: #f9fafb;
+}
+
+.primary-button, .secondary-button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.primary-button {
+  background-color: #ffffff;
+  color: #3b82f6;
+}
+
+.primary-button:hover {
+  background-color: #dbeafe;
+}
+
+.secondary-button {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.secondary-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
 }

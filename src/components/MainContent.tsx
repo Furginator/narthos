@@ -30,7 +30,9 @@ const MainContent: React.FC<MainContentProps> = ({ activeTab, connectionStatus, 
 
   return (
     <main className="main-content">
-      {renderContent()}
+      <div className="tab-content" key={activeTab}>
+        {renderContent()}
+      </div>
     </main>
   );
 };
