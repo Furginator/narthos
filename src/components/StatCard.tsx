@@ -5,8 +5,8 @@ import '/src/styles/StatCard.css';
 const StatCard: React.FC<StatCardProps> = ({ title, value, icon: Icon, color }) => {
   const [showTooltip, setShowTooltip] = useState(false);
 
-  const getColorConfig = (color: string) => {
-    switch (color) {
+  const getColorClass = (color: string) => {
+    switch (color.toLowerCase()) {
       case 'blue': return 'stat-icon-blue';
       case 'green': return 'stat-icon-green';
       case 'purple': return 'stat-icon-purple';
@@ -36,7 +36,7 @@ const StatCard: React.FC<StatCardProps> = ({ title, value, icon: Icon, color }) 
           <p className="stat-title">{title}</p>
           <p className="stat-value">{value}</p>
         </div>
-        <div className={`stat-icon ${getColorConfig(color)}`}>
+        <div className={`stat-icon ${getColorClass(color)}`}>
           <Icon className="icon" />
         </div>
       </div>

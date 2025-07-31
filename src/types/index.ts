@@ -1,3 +1,4 @@
+// src/types/index.ts
 export type ConnectionStatus = 'connected' | 'connecting' | 'disconnected';
 
 export interface QuickActionButtonProps {
@@ -14,6 +15,7 @@ export interface ExtendedQuickActionButtonProps extends QuickActionButtonProps {
 export interface SidebarProps {
   activeTab: string;
   setActiveTab: (tab: string) => void;
+  stats: Stats;
 }
 
 export interface ConnectionIndicatorProps {
@@ -54,6 +56,13 @@ export interface ModelManagerProps {
   setStats: (prevStats: Stats | ((prev: Stats) => Stats)) => void;
 }
 
+export interface StatCardProps {
+  title: string;
+  value: number | string;
+  icon: React.ComponentType<any>; // Change to component type
+  color: string;
+}
+
 export interface RecentActivityProps {
   activities: string[];
 }
@@ -66,24 +75,16 @@ export interface HeaderProps {
   connectionStatus: ConnectionStatus;
 }
 
-export interface SidebarProps {
-  activeTab: string;
-  setActiveTab: (tab: string) => void;
-  stats: Stats;
-}
-
 export interface DashboardProps {
   stats: Stats;
   setStats: (prevStats: Stats | ((prev: Stats) => Stats)) => void;
-  connectionStatus: ConnectionStatus;
+  connectionStatus: string;
 }
 
 export interface MainContentProps {
   activeTab: string;
-  connectionStatus: ConnectionStatus;
-  setConnectionStatus: (status: ConnectionStatus) => void;
+  connectionStatus: string;
+  setConnectionStatus: (status: string) => void;
   stats: Stats;
   setStats: (prevStats: Stats | ((prev: Stats) => Stats)) => void;
 }
-
-

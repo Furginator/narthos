@@ -1,17 +1,15 @@
 .stat-card {
-  background-color: white;
+  border: 2px solid;
   border-radius: 8px;
   padding: 16px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
+  text-align: center;
+  transition: background-color 0.3s;
+  position: relative;
 }
 
 .dark .stat-card {
-  background-color: #1f2937;
-}
-
-.stat-card:hover {
-  transform: translateY(-2px);
+  background-color: #374151;
+  color: #f9fafb;
 }
 
 .stat-card-header {
@@ -20,77 +18,51 @@
   align-items: center;
 }
 
-.stat-title {
-  font-size: 14px;
-  color: #6b7280;
-  margin-bottom: 8px;
-}
-
-.dark .stat-title {
-  color: #9ca3af;
-}
-
-.stat-value {
-  font-size: 24px;
-  font-weight: 700;
-  color: #111827;
-}
-
-.dark .stat-value {
-  color: #f9fafb;
-}
-
 .stat-icon {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 8px;
 }
 
-.stat-icon-blue {
-  background-color: #dbeafe;
+.stat-icon-blue .icon {
+  color: #3b82f6;
 }
 
-.stat-icon-green {
-  background-color: #d1fae5;
+.stat-icon-green .icon {
+  color: #10b981;
 }
 
-.stat-icon-purple {
-  background-color: #ede9fe;
+.stat-icon-purple .icon {
+  color: #8b5cf6;
 }
 
-.stat-icon-orange {
-  background-color: #ffedd5;
+.stat-icon-orange .icon {
+  color: #f97316;
 }
 
-.stat-icon-default {
-  background-color: #f3f4f6;
+.stat-icon-default .icon {
+  color: #6b7280;
 }
 
-.stat-icon .icon {
-  width: 24px;
-  height: 24px;
-  color: #374151;
+.stat-title {
+  font-size: 16px;
+  margin-bottom: 5px;
 }
 
-.dark .stat-icon .icon {
-  color: #f9fafb;
+.stat-value {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .stat-tooltip {
   position: absolute;
-  background-color: #374151;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
   color: white;
-  padding: 8px;
+  padding: 5px 10px;
   border-radius: 4px;
   font-size: 12px;
-  z-index: 100;
-  margin-top: 8px;
   white-space: nowrap;
-}
-
-.dark .stat-tooltip {
-  background-color: #1f2937;
+  z-index: 10;
 }
