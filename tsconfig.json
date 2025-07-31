@@ -1,9 +1,17 @@
 {
-  "extends": "./tsconfig.app.json",
-  "include": ["src", "vite.config.ts"],
   "compilerOptions": {
-    "baseUrl": "src",
-    "types": ["vite/client"],
-    "typeRoots": ["./node_modules/@types", "./src/styles"]
-  }
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }
