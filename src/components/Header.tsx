@@ -46,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({ stats, setStats }) => {
         }} aria-label={document.documentElement.classList.contains('dark') ? 'Switch to light mode' : 'Switch to dark mode'}>
           {document.documentElement.classList.contains('dark') ? <Sun className="theme-icon" /> : <Moon className="theme-icon" />}
         </button>
-        {/* ... rest of the component ... */}
+        {/* ... rest of component ... */}
       </div>
     </header>
   );
