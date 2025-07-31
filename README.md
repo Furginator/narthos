@@ -1,6 +1,6 @@
-# < align="center">Welcome to Narthos!
-
 <img align="left" width="150" height="150" alt="narthos_logo" src="https://github.com/user-attachments/assets/fb0cc2be-ac89-47aa-a75c-50aaf7119563">
+
+### <table><tr><td> Welcome to Narthos! </td></tr></table>
 
 Narthos is a web-based GUI crafted with Vite and TypeScript, harmonizing structured absence with infinite possibility. Built atop a FastAPI backend, it offers a liminal workspace for exploring, managing, and transforming AI-driven databases.
 
@@ -16,37 +16,36 @@ Narthos is a web-based GUI crafted with Vite and TypeScript, harmonizing structu
 - Access at [http://localhost:5173](http://localhost:5173)
 
 ### Backend
-- Create and activate a Python virtual environment (>=3.8):
-- python3 -m venv venv
-- source venv/bin/activate
-- Install dependencies: pip install -r backend/requirements.txt
-- Run the backend: uvicorn backend:app --host 0.0.0.0 --port 8000
+- Create a Python virtual environment (>=3.8): `python3 -m venv venv`
+- Activate Python virtual environment: `source venv/bin/activate`
+- Install dependencies: `pip install -r backend/requirements.txt`
+- Run the backend: `uvicorn backend:app --host 0.0.0.0 --port 8000`
 
 ### Running in VS Code
-Install the Python extension in VS Code.
-Select the virtual environment: Ctrl+Shift+P > Python: Select Interpreter.
-Run both environments: Ctrl+Shift+B > Start All (uses .vscode/tasks.json).
+- Install the Python extension in VS Code.
+- Select the virtual environment: `Ctrl+Shift+P` > Python: Select Interpreter.
+- Run both environments: `Ctrl+Shift+B` > Start All (uses .vscode/tasks.json).
 
 ### Structure
-src/components/: React components (NarthosGUI.tsx, Header.tsx, etc.).
-src/styles/: Component-specific CSS (App.css, Header.css, etc.).
-src/types/: TypeScript type definitions (index.ts).
-src/main.tsx: Entry point for the Vite app.
-backend/: FastAPI backend (backend.py, requirements.txt).
-public/: Static assets (index.html, favicon.ico, manifest.json).
+- src/components/: React components (NarthosGUI.tsx, Header.tsx, etc.).
+- src/styles/: Component-specific CSS (App.css, Header.css, etc.).
+- src/types/: TypeScript type definitions (index.ts).
+- src/main.tsx: Entry point for the Vite app.
+- backend/: FastAPI backend (backend.py, requirements.txt).
+- public/: Static assets (index.html, favicon.ico, manifest.json).
 
 ### Features
-Dashboard: System summary and stats with hover details.
-Connections: Database connection management with connection log.
-Models: Model creation and listing.
-Data: Collection browsing with delete functionality.
-Predictions: Run predictions with results display.
-Logs: System log viewer with clear option.
+- Dashboard: System summary and stats with hover details.
+- Connections: Database connection management with connection log.
+- Models: Model creation and listing.
+- Data: Collection browsing with delete functionality.
+- Predictions: Run predictions with results display.
+- Logs: System log viewer with clear option.
 
 ### Security
-Migrated to Vite to resolve vulnerabilities in react-scripts@5.0.1. No known vulnerabilities remain. Monitor with:
-npm audit
-npm outdated
+- Migrated to Vite to resolve vulnerabilities in react-scripts@5.0.1.
+- No known vulnerabilities remain.
+- Monitor with: `npm audit` and `npm outdated`
 
 Commits are GPG-signed (verified on GitHub).
 
