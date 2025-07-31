@@ -1,2 +1,53 @@
-.header { padding: 16px; background: white; display: flex; justify-content: space-between; }
-.dark .header { background: #1f2937; color: #f9fafb; }
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+  min-height: 120px; /* Adjusted for larger logo */
+}
+
+.dark .header {
+  background-color: #1f2937;
+  color: #f9fafb;
+}
+
+.header-left {
+  display: flex;
+  align-items: flex-start; /* Aligns logo and text at the top */
+  gap: 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-icon {
+  max-width: 120px;
+  max-height: 120px;
+  object-fit: contain; /* Scales without distortion */
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+  margin-top: 20px; /* Offset for logo alignment */
+}
+
+.dark .title {
+  color: #f9fafb;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 5px;
+}
+
+.dark .subtitle {
+  color: #9ca3af;
+}
