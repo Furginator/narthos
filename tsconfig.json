@@ -1,17 +1,26 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.tsbuildinfo", // Adjusted path
+    "target": "ES2022", // Supported version
+    "lib": ["ES2022", "DOM"],
     "module": "ESNext",
-    "moduleResolution": "node",
-    "jsx": "react-jsx",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true,
     "strict": true,
-    "esModuleInterop": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
     "skipLibCheck": true,
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true
+    "isolatedModules": true
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "vite.config.ts"], // Include both src and Vite config
   "exclude": ["node_modules"]
 }
