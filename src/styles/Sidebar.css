@@ -1,8 +1,8 @@
 .sidebar {
-  width: 256px;
+  width: 150px;
   background-color: white;
   border-right: 1px solid #e5e7eb;
-  padding: 24px;
+  padding: 10px;
   transition: width 0.3s ease;
 }
 
@@ -12,13 +12,13 @@
 }
 
 .sidebar-collapsed {
-  width: 60px;
+  width: 35px;
 }
 
 .collapse-button {
   background: none;
   border: none;
-  padding: 8px;
+  padding: 5px;
   cursor: pointer;
   display: flex;
   justify-content: flex-end;
@@ -37,23 +37,24 @@
 .nav {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-bottom: 24px;
+  align-items: left;
+  gap: 5px;
+  margin-bottom: 10px;
 }
 
 .nav-button {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px;
-  border-radius: 8px;
+  align-items: left;
+  gap: 10px;
+  padding: 5px;
+  border-radius: 5px;
   background: none;
   border: none;
   cursor: pointer;
   font-size: 16px;
   color: #374151;
   text-align: left;
-  justify-content: center;
+  justify-content: left;
   transition: background-color 0.2s ease;
 }
 
@@ -75,14 +76,15 @@
 }
 
 .nav-icon {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
+  align-items: left;
 }
 
 .nav-label {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  align-items: left;
+  gap: 5px;
 }
 
 .badge {
@@ -102,7 +104,7 @@
 }
 
 .quick-actions {
-  padding-top: 24px;
+  padding-top: 10px;
   border-top: 1px solid #e5e7eb;
 }
 
@@ -111,10 +113,11 @@
 }
 
 .quick-actions-title {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   color: #374151;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
+  align-items: center;
 }
 
 .dark .quick-actions-title {
@@ -124,5 +127,5 @@
 .quick-actions-container {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 5px;
 }
