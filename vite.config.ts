@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
-import vitest from 'vitest/config'; // Import Vitest config
 
 export default defineConfig({
   plugins: [react()],
