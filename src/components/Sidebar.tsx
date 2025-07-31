@@ -5,7 +5,7 @@ import type { SidebarProps } from '../types';
 import '/src/styles/Sidebar.css';
 import QuickActionButton from './QuickActionButton';
 
-const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => {
+const Sidebar: React.FC<SidebarProps> = ({ setActiveTab }) => {
   const tabs = [
     { path: '/dashboard', icon: ChartColumn, label: 'Dashboard' },
     { path: '/connections', icon: Database, label: 'Connections' },

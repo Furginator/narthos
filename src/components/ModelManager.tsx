@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Brain, Plus, Trash2 } from 'lucide-react';
-import type { ModelManagerProps, Stats } from '../types';
+import type { ModelManagerProps, } from '../types';
 import '/src/styles/ModelManager.css';
 
 const ModelManager: React.FC<ModelManagerProps> = ({ stats, setStats }) => {

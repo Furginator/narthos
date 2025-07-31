@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Settings, Moon, Sun, User, CheckCircle, AlertCircle } from 'lucide-react';
+import React, { useEffect } from 'react';
+import { Moon, Sun, CheckCircle, AlertCircle } from 'lucide-react';
 import type { HeaderProps, Stats } from '../types';
 import '/src/styles/Header.css';
 
