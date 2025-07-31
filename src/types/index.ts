@@ -23,8 +23,8 @@ export interface ConnectionIndicatorProps {
 }
 
 export interface ConnectionManagerProps {
-  connectionStatus: string;
-  setConnectionStatus: (status: string) => void;
+  connectionStatus: ConnectionStatus;
+  setConnectionStatus: (status: ConnectionStatus) => void;
   stats: Stats;
   setStats: (prevStats: Stats | ((prev: Stats) => Stats)) => void;
 }

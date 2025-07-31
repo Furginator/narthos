@@ -1,5 +1,5 @@
 import React from 'react';
-import type { MainContentProps, Stats } from '../types';
+import type { MainContentProps,} from '../types';
 import Dashboard from './Dashboard';
 import ConnectionManager from './ConnectionManager';
 import ModelManager from './ModelManager';
