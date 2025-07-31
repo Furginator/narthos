@@ -19,38 +19,11 @@ export interface ConnectionIndicatorProps {
   status: string;
 }
 
-export interface RecentActivityProps {
-  activities: string[];
-}
-
-export interface SystemStatusProps {
-  connectionStatus: string;
-}
-
-export interface HeaderProps {
-  stats: { [key: string]: string };
-  setStats: (stats: { [key: string]: string }) => void;
-}
-
-export interface DashboardProps {
-  stats: { [key: string]: number };
-  setStats: (stats: { [key: string]: number }) => void;
-  connectionStatus: string;
-}
-
-export interface MainContentProps {
-  activeTab: string;
-  connectionStatus: string;
-  setConnectionStatus: (status: string) => void;
-  stats: { [key: string]: string };
-  setStats: (stats: { [key: string]: string }) => void;
-}
-
 export interface ConnectionManagerProps {
   connectionStatus: string;
   setConnectionStatus: (status: string) => void;
   stats: Stats;
-  setStats: (prevStats: Stats | ((prev: Stats) => Stats)) => void; // Allow function updater
+  setStats: (prevStats: Stats | ((prev: Stats) => Stats)) => void;
 }
 
 export interface ConnectionForm {
@@ -70,7 +43,34 @@ export interface DatabaseProvider {
 
 export interface Stats {
   connectedDatabase: string;
-  activeModels: number;
-  componentsLoaded: number;
-  predictionsRun: number;
+  activeModels: number | string;
+  componentsLoaded: number | string;
+  predictionsRun: number | string;
+}
+
+export interface RecentActivityProps {
+  activities: string[];
+}
+
+export interface SystemStatusProps {
+  connectionStatus: string;
+}
+
+export interface HeaderProps {
+  stats: Stats;
+  setStats: (prevStats: Stats | ((prev: Stats) => Stats)) => void;
+}
+
+export interface DashboardProps {
+  stats: Stats;
+  setStats: (prevStats: Stats | ((prev: Stats) => Stats)) => void;
+  connectionStatus: string;
+}
+
+export interface MainContentProps {
+  activeTab: string;
+  connectionStatus: string;
+  setConnectionStatus: (status: string) => void;
+  stats: Stats;
+  setStats: (prevStats: Stats | ((prev: Stats) => Stats)) => void;
 }

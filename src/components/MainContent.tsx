@@ -1,5 +1,5 @@
 import React from 'react';
-import type { MainContentProps } from '../types';
+import type { MainContentProps, Stats } from '../types';
 import Dashboard from './Dashboard';
 import ConnectionManager from './ConnectionManager';
 import ModelManager from './ModelManager';
@@ -12,7 +12,7 @@ const MainContent: React.FC<MainContentProps> = ({ activeTab, connectionStatus, 
   const renderContent = () => {
     switch (activeTab) {
       case 'dashboard':
-        return <Dashboard stats={stats} connectionStatus={connectionStatus} />;
+        return <Dashboard stats={stats} connectionStatus={connectionStatus} setStats={setStats} />;
       case 'connections':
         return <ConnectionManager connectionStatus={connectionStatus} setConnectionStatus={setConnectionStatus} stats={stats} setStats={setStats} />;
       case 'models':
@@ -24,7 +24,7 @@ const MainContent: React.FC<MainContentProps> = ({ activeTab, connectionStatus, 
       case 'logs':
         return <LogViewer />;
       default:
-        return <Dashboard stats={stats} connectionStatus={connectionStatus} />;
+        return <Dashboard stats={stats} connectionStatus={connectionStatus} setStats={setStats} />;
     }
   };
 
