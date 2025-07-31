@@ -48,6 +48,11 @@ export interface Stats {
   predictionsRun: number | string;
 }
 
+export interface ModelManagerProps {
+  stats: Stats;
+  setStats: (prevStats: Stats | ((prev: Stats) => Stats)) => void;
+}
+
 export interface RecentActivityProps {
   activities: string[];
 }

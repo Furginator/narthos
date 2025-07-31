@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Brain, Plus, Trash2 } from 'lucide-react';
-import type { ModelManagerProps } from '../types';
+import type { ModelManagerProps, Stats } from '../types';
 import '/src/styles/ModelManager.css';
 
 const ModelManager: React.FC<ModelManagerProps> = ({ stats, setStats }) => {
@@ -10,7 +10,11 @@ const ModelManager: React.FC<ModelManagerProps> = ({ stats, setStats }) => {
   const handleCreateModel = () => {
     if (modelName.trim()) {
       setModels(prev => [...prev, modelName]);
-      setStats(prev => ({ ...prev, activeModels: prev.activeModels + 1 }));
+      const currentActiveModels = typeof stats.activeModels === 'string' ? parseInt(stats.activeModels) : (stats.activeModels || 0);
+      setStats(prev => ({
+        ...prev,
+        activeModels: currentActiveModels + 1,
+      }));
       alert(`Model ${modelName} created!`);
       setModelName('');
     }
@@ -18,7 +22,11 @@ const ModelManager: React.FC<ModelManagerProps> = ({ stats, setStats }) => {
 
   const handleDeleteModel = (model: string) => {
     setModels(prev => prev.filter(m => m !== model));
-    setStats(prev => ({ ...prev, activeModels: prev.activeModels - 1 }));
+    const currentActiveModels = typeof stats.activeModels === 'string' ? parseInt(stats.activeModels) : (stats.activeModels || 0);
+    setStats(prev => ({
+      ...prev,
+      activeModels: Math.max(0, currentActiveModels - 1), // Prevent negative
+    }));
     alert(`Model ${model} deleted!`);
   };
 
