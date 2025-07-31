@@ -1,8 +1,7 @@
-**<p align="center">Welcome to Narthos!</p>**
-<p align="center"><img width="150" height="150" alt="narthos_logo" src="https://github.com/user-attachments/assets/fb0cc2be-ac89-47aa-a75c-50aaf7119563" /></p>
+# <p align="center">Welcome to Narthos!</p>
 
-<p align="center">Narthos is a web-based GUI crafted with Vite and TypeScript, harmonizing structured absence with infinite possibility.</p>
-<p align="center">Built atop a FastAPI backend, it offers a liminal workspace for exploring, managing, and transforming AI-driven databases.</p>
+<img align="left" width="150" height="150" alt="narthos_logo" src="https://github.com/user-attachments/assets/fb0cc2be-ac89-47aa-a75c-50aaf7119563"> Narthos is a web-based GUI crafted with Vite and TypeScript, harmonizing structured absence with infinite possibility. Built atop a FastAPI backend, it offers a liminal workspace for exploring, managing, and transforming AI-driven databases.
+</p>
 
 <img width="2494" height="771" alt="narthos-1" src="https://github.com/user-attachments/assets/0d7e645f-5fc7-458c-8d54-96f9741fe8e3" />
 <img width="2494" height="759" alt="narthos-2" src="https://github.com/user-attachments/assets/7ed5a645-c7a7-46e3-a666-f1a4bf8a78f5" />
