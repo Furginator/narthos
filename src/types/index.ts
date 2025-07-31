@@ -58,8 +58,8 @@ export interface ModelManagerProps {
 
 export interface StatCardProps {
   title: string;
-  value: number | string;
-  icon: React.ComponentType<any>; // Change to component type
+  value: number | string | React.ReactNode;
+  icon: React.ComponentType<any>;
   color: string;
 }
 
@@ -72,7 +72,8 @@ export interface SystemStatusProps {
 }
 
 export interface HeaderProps {
-  connectionStatus: ConnectionStatus;
+  stats: Stats; // Use Stats type instead of index signature
+  setStats: (prevStats: Stats | ((prev: Stats) => Stats)) => void;
 }
 
 export interface DashboardProps {
