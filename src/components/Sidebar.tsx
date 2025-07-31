@@ -22,14 +22,13 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => {
           <NavLink
             key={path}
             to={path}
-            className={({ isActive }) => `nav-button ${isActive ? 'nav-button-active' : ''}`}
+            className={({ isActive }: { isActive: boolean }) => `nav-button ${isActive ? 'nav-button-active' : ''}`} // Typed isActive
             onClick={() => setActiveTab(label.toLowerCase())}
           >
             <Icon className="nav-icon" />
             <span>{label}</span>
           </NavLink>
         ))}
-        {/* Example QuickActionButton usage - adjust based on your intent */}
         <QuickActionButton
           icon={<ChartColumn />}
           label="Quick Action"
