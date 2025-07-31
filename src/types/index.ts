@@ -72,8 +72,9 @@ export interface SystemStatusProps {
 }
 
 export interface HeaderProps {
-  stats: Stats; // Use Stats type instead of index signature
+  stats: Stats;
   setStats: (prevStats: Stats | ((prev: Stats) => Stats)) => void;
+  connectionStatus: ConnectionStatus; // Added to match NarthosGUI
 }
 
 export interface DashboardProps {
@@ -84,8 +85,8 @@ export interface DashboardProps {
 
 export interface MainContentProps {
   activeTab: string;
-  connectionStatus: string;
-  setConnectionStatus: (status: string) => void;
+  connectionStatus: ConnectionStatus; // Updated to match useState type
+  setConnectionStatus: (status: ConnectionStatus) => void; // Updated to match useState setter
   stats: Stats;
   setStats: (prevStats: Stats | ((prev: Stats) => Stats)) => void;
 }
