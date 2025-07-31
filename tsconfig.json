@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.tsbuildinfo", // Adjusted path
-    "target": "ES2022", // Supported version
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.tsbuildinfo",
+    "target": "ES2022",
     "lib": ["ES2022", "DOM"],
     "module": "ESNext",
     "moduleResolution": "bundler",
@@ -21,6 +21,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true
   },
-  "include": ["src/**/*", "vite.config.ts"], // Include both src and Vite config
+  "include": ["src/**/*", "vite.config.ts"],
   "exclude": ["node_modules"]
 }
