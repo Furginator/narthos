@@ -1,51 +1,23 @@
-.system-status-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 16px;
+.system-status {
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+  color: #111827;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.status-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 0;
-  border-bottom: 1px solid #e5e7eb;
+.dark .system-status {
+  background-color: #1f2937;
+  color: #f9fafb;
 }
 
-.status-label {
+.status-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.status-summary {
   font-size: 14px;
-  color: #374151;
-}
-
-.status-badge {
-  font-size: 12px;
-  padding: 4px 8px;
-  border-radius: 9999px;
-}
-
-.status-badge-healthy {
-  background-color: #d1fae5;
-  color: #10b981;
-}
-
-.status-badge-pending {
-  background-color: #fef9c3;
-  color: #eab308;
-}
-
-.status-badge-disconnected {
-  background-color: #fee2e2;
-  color: #ef4444;
-}
-
-.status-details {
-  font-size: 12px;
-  color: #6b7280;
-  margin-top: 4px;
-}
-
-.refresh-icon {
-  width: 20px;
-  height: 20px;
+  margin: 0;
 }

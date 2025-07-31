@@ -1,5 +1,5 @@
 import React from 'react';
-import { Database, Brain, Settings, Zap, CheckCircle } from 'lucide-react';
+import { Database, Brain, Settings, Zap } from 'lucide-react';
 import type { DashboardProps } from '../types';
 import StatCard from './StatCard';
 import RecentActivity from './RecentActivity';
@@ -7,23 +7,16 @@ import SystemStatus from './SystemStatus';
 import '/src/styles/Dashboard.css';
 
 const Dashboard: React.FC<DashboardProps> = ({ stats, connectionStatus }) => {
-  const handleGetStarted = () => {
-    alert('Redirecting to onboarding guide...');
-  };
-
-  const handleViewDocs = () => {
-    window.open('https://docs.superduper.io/docs/intro/', '_blank');
-  };
+  const activities = ['Connected to MongoDB', 'Model loaded']; // Placeholder data
 
   return (
     <div className="dashboard">
-      <div className="welcome-section welcome-animate">
-        <div className="brand-icon">NS</div>
+      <div className="welcome-section">
         <h2 className="welcome-title">Welcome to Narthos</h2>
         <p className="welcome-text">Build end-to-end AI applications and agents on your own data</p>
         <div className="button-group">
-          <button className="primary-button" onClick={handleGetStarted}>Get Started</button>
-          <button className="secondary-button" onClick={handleViewDocs}>View Docs</button>
+          <button className="primary-button">Get Started</button>
+          <button className="secondary-button">View Docs</button>
         </div>
       </div>
       <div className="stats-grid">
@@ -32,22 +25,11 @@ const Dashboard: React.FC<DashboardProps> = ({ stats, connectionStatus }) => {
         <StatCard title="Components" value={stats.componentsLoaded} icon={Settings} color="purple" />
         <StatCard title="Predictions" value={stats.predictionsRun} icon={Zap} color="orange" />
       </div>
-      <div className="status-card">
-        <div className="status-card-header">
-          <CheckCircle className="status-icon" />
-          <h3 className="status-title">System Summary</h3>
-        </div>
-        <div className="status-summary">
-          <p>Database: {stats.connectedDatabase || 'Disconnected'}</p>
-          <p>Models: {stats.activeModels}</p>
-          <p>Components: {stats.componentsLoaded}</p>
-          <p>Predictions: {stats.predictionsRun}</p>
-          <p>Status: {connectionStatus === 'connected' ? 'Operational' : 'Disconnected'}</p>
-        </div>
+      <div className="status-board">
+        <SystemStatus connectionStatus={connectionStatus} />
       </div>
       <div className="activity-grid">
-        <RecentActivity />
-        <SystemStatus connectionStatus={connectionStatus} />
+        <RecentActivity activities={activities} />
       </div>
     </div>
   );

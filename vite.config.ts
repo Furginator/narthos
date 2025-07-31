@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@styles': '/src/styles'
-    }
-  }
+      '/src': '/home/rob/khora/narthos/src', // Optional, if custom paths
+    },
+  },
 });

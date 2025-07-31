@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Settings, Moon, Sun, User, CheckCircle, AlertCircle } from 'lucide-react';
 import type { HeaderProps } from '../types';
-import ConnectionIndicator from './ConnectionIndicator';
 import '/src/styles/Header.css';
 
 const Header: React.FC<HeaderProps> = ({ connectionStatus }) => {
@@ -17,17 +16,17 @@ const Header: React.FC<HeaderProps> = ({ connectionStatus }) => {
 
   const getStatusColor = (status: string) => {
     switch (status.toLowerCase()) {
-      case 'connected': case 'online': return 'green';
+      case 'connected': return 'green';
       case 'connecting': return 'yellow';
       default: return 'red';
     }
   };
 
   const stats = {
-    Database: connectionStatus,
-    CPU: 'Online', // Placeholder, replace with actual data
-    Memory: 'Online', // Placeholder
-    Storage: 'Online', // Placeholder
+    connection: connectionStatus,
+    cpu: 'Online', // Placeholder
+    memory: 'Online', // Placeholder
+    storage: 'Online', // Placeholder
   };
 
   return (
