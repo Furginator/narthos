@@ -15,11 +15,11 @@ class ErrorBoundary extends React.Component<{ children: React.ReactNode }, { has
       return (
         <div>
           <h1>Error occurred</h1>
-          <p>{this.state.error?.message}</p> {/* Safe with explicit Error type */}
+          <p>{this.state.error?.message}</p>
         </div>
       );
     }
-    return this.props.children; // Typed as React.ReactNode
+    return this.props.children;
   }
 }
 
