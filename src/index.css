@@ -1,4 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import NarthosGUI from './components/NarthosGUI';
-ReactDOM.createRoot(document.getElementById('root')!).render(<NarthosGUI />);
+/* Original with errors (hypothetical) */
+.app background-color: white;
+.dark .app color: #f9fafb;
+.header padding: 10px;
+body margin: 0;
+
+/* Fixed version */
+.app {
+  background-color: white;
+}
+.dark .app {
+  color: #f9fafb;
+}
+.header {
+  padding: 10px;
+}
+body {
+  margin: 0;
+}
