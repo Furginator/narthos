@@ -1,12 +1,12 @@
-<img align="left" width="150" height="150" alt="narthos_logo" src="https://github.com/user-attachments/assets/fb0cc2be-ac89-47aa-a75c-50aaf7119563">
+<img align="left" width="100" height="100" alt="narthos_logo" src="https://github.com/user-attachments/assets/fb0cc2be-ac89-47aa-a75c-50aaf7119563">
 
-### <table><tr><td> Welcome to Narthos! </td></tr></table>
+# <table><tr><td> Welcome to Narthos! </td></tr></table>
 
 Narthos is a web-based GUI crafted with Vite and TypeScript, harmonizing structured absence with infinite possibility. Built atop a FastAPI backend, it offers a liminal workspace for exploring, managing, and transforming AI-driven databases.
 
 <div style="display: flex; gap: 20px;">
-  <img width="250" height="150" alt="Screenshot from 2025-07-31 00-36-05" src="https://github.com/user-attachments/assets/cfcc1402-36f2-46a5-9de4-4b0117425e28" />
-  <img width="250" height="150" alt="Screenshot from 2025-07-31 00-36-13" src="https://github.com/user-attachments/assets/0a32c91c-d289-4558-8df6-a72abf4c6419" />
+  <img width="300" height="200" alt="Screenshot from 2025-07-31 00-36-05" src="https://github.com/user-attachments/assets/cfcc1402-36f2-46a5-9de4-4b0117425e28" />
+  <img width="300" height="200" alt="Screenshot from 2025-07-31 00-36-13" src="https://github.com/user-attachments/assets/0a32c91c-d289-4558-8df6-a72abf4c6419" />
 </div>
 
 ## Setup
