@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { ChartColumn, Database, Brain, Table, Zap, FileText } from 'lucide-react';
 import type { SidebarProps } from '../types';
-import './styles/Sidebar.css';
+import '/src/styles/Sidebar.css'; // Changed from "./styles/Sidebar.css"
 import QuickActionButton from './QuickActionButton';
 
 const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => {
@@ -22,7 +22,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => {
           <NavLink
             key={path}
             to={path}
-            className={({ isActive }: { isActive: boolean }) => `nav-button ${isActive ? 'nav-button-active' : ''}`} // Typed isActive
+            className={({ isActive }: { isActive: boolean }) => `nav-button ${isActive ? 'nav-button-active' : ''}`}
             onClick={() => setActiveTab(label.toLowerCase())}
           >
             <Icon className="nav-icon" />
