@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { ChartColumn, Database, Brain, Table, Zap, FileText } from 'lucide-react';
 import type { SidebarProps } from '../types';
-// Remove or comment out: import '/src/styles/Sidebar.css';
+import '/src/styles/Sidebar.css';
 import QuickActionButton from './QuickActionButton';
 
 const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => {
