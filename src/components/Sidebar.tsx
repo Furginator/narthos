@@ -1,82 +1,41 @@
-import React, { useState } from 'react';
-import { BarChart3, Database, Brain, FileText, Zap, Terminal, Plus, Play, Search, Upload, ChevronLeft, ChevronRight } from 'lucide-react';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { ChartColumn, Database, Brain, Table, Zap, FileText } from 'lucide-react';
 import type { SidebarProps } from '../types';
+import './styles/Sidebar.css';
 import QuickActionButton from './QuickActionButton';
-import '/src/styles/Sidebar.css';
 
-const Sidebar: React.FC<SidebarProps & { stats: { activeModels: number } }> = ({ activeTab, setActiveTab, stats }) => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
-
-  const navigation = [
-    { id: 'dashboard', label: 'Dashboard', icon: BarChart3 },
-    { id: 'connections', label: 'Connections', icon: Database },
-    { id: 'models', label: 'Models', icon: Brain, badge: stats.activeModels },
-    { id: 'data', label: 'Data', icon: FileText },
-    { id: 'predictions', label: 'Predictions', icon: Zap },
-    { id: 'logs', label: 'Logs', icon: Terminal }
+const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => {
+  const tabs = [
+    { path: '/dashboard', icon: ChartColumn, label: 'Dashboard' },
+    { path: '/connections', icon: Database, label: 'Connections' },
+    { path: '/models', icon: Brain, label: 'Models' },
+    { path: '/data', icon: Table, label: 'Data' },
+    { path: '/predictions', icon: Zap, label: 'Predictions' },
+    { path: '/logs', icon: FileText, label: 'Logs' },
   ];
 
-  const handleQuickAction = (action: string) => {
-    switch (action) {
-      case 'Create Model':
-        setActiveTab('models');
-        break;
-      case 'Run Prediction':
-        setActiveTab('predictions');
-        break;
-      case 'Query Database':
-        alert('Query Database not implemented yet');
-        break;
-      case 'Upload Data':
-        alert('Upload Data not implemented yet');
-        break;
-    }
-  };
-
   return (
-    <aside className={`sidebar ${isCollapsed ? 'sidebar-collapsed' : ''}`}>
-      <button
-        className="collapse-button"
-        onClick={() => setIsCollapsed(!isCollapsed)}
-        aria-label={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
-      >
-        {isCollapsed ? <ChevronRight className="collapse-icon" /> : <ChevronLeft className="collapse-icon" />}
-      </button>
+    <aside className="sidebar">
       <nav className="nav">
-        {navigation.map((item) => {
-          const Icon = item.icon;
-          const isActive = activeTab === item.id;
-          return (
-            <button
-              key={item.id}
-              onClick={() => setActiveTab(item.id)}
-              className={`nav-button ${isActive ? 'nav-button-active' : 'nav-button-inactive'}`}
-              aria-label={item.label}
-            >
-              <Icon className="nav-icon" />
-              {!isCollapsed && (
-                <span className="nav-label">
-                  {item.label}
-                  {item.badge !== undefined && item.badge > 0 && (
-                    <span className="badge">{item.badge}</span>
-                  )}
-                </span>
-              )}
-            </button>
-          );
-        })}
+        {tabs.map(({ path, icon: Icon, label }) => (
+          <NavLink
+            key={path}
+            to={path}
+            className={({ isActive }) => `nav-button ${isActive ? 'nav-button-active' : ''}`}
+            onClick={() => setActiveTab(label.toLowerCase())}
+          >
+            <Icon className="nav-icon" />
+            <span>{label}</span>
+          </NavLink>
+        ))}
+        {/* Example QuickActionButton usage - adjust based on your intent */}
+        <QuickActionButton
+          icon={<ChartColumn />}
+          label="Quick Action"
+          onClick={() => alert('Action triggered')}
+        />
       </nav>
-      {!isCollapsed && (
-        <div className="quick-actions">
-          <h3 className="quick-actions-title">Quick Actions</h3>
-          <div className="quick-actions-container">
-            <QuickActionButton icon={Plus} label="Create Model" onClick={() => handleQuickAction('Create Model')} />
-            <QuickActionButton icon={Play} label="Run Prediction" onClick={() => handleQuickAction('Run Prediction')} />
-            <QuickActionButton icon={Search} label="Query Database" onClick={() => handleQuickAction('Query Database')} />
-            <QuickActionButton icon={Upload} label="Upload Data" onClick={() => handleQuickAction('Upload Data')} />
-          </div>
-        </div>
-      )}
     </aside>
   );
 };
