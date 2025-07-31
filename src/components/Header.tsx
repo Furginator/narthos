@@ -32,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({ connectionStatus }) => {
   return (
     <header className="header">
       <div className="header-left">
-        <img src="/narthos-logo.png" alt="Narthos Logo" className="logo-icon" width="120" height="120" />
+        <img src="/narthos-logo.png" alt="Narthos Logo" className="logo-icon" />
       </div>
       <div className="status-switchboard">
         {Object.entries(stats).map(([key, value]) => (
