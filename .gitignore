@@ -22,5 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-venv
+
+# Python3 directories
+bin
+lib
+lib64
+pyvenv.cfg
+
 
