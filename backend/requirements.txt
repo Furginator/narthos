@@ -1,4 +1,6 @@
 fastapi
-uvicorn
-superduper-framework
 pydantic
+pymongo
+superduper-framework
+superduper-mongodb
+uvicorn
