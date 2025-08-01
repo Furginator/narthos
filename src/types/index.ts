@@ -26,7 +26,7 @@ export interface SidebarProps {
 }
 
 export interface QuickActionButtonProps {
-  icon: React.ComponentType<{ className?: string }> | React.ReactNode; // Allow elements or components
+  icon: React.ReactNode; // Allow elements or components
   label: string;
 }
 

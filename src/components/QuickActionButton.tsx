@@ -4,7 +4,11 @@ import '/src/styles/QuickActionButton.css';
 
 const QuickActionButton: React.FC<QuickActionButtonProps> = ({ icon, label }) => (
   <button className="quick-action-button">
-    {React.isValidElement(icon) ? icon : <icon className="quick-action-icon" />}
+    {React.isValidElement(icon) ? (
+      icon
+    ) : (
+      <span className="quick-action-icon">{icon}</span>
+    )}
     <span>{label}</span>
   </button>
 );

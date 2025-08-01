@@ -1,10 +1,10 @@
 import React from 'react';
-import { BarChart3, Database, Brain, FileText, Zap, Terminal } from 'lucide-react';
+import { BarChart3, Database, Brain, FileText, Zap, Terminal, Plus, Play, Search, Upload } from 'lucide-react';
 import QuickActionButton from './QuickActionButton';
-import type { SidebarProps, Stats } from '/src/types';
+import type { SidebarProps } from '/src/types';
 import '/src/styles/Sidebar.css';
 
-const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, stats }) => {
+const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => {
   const navigation = [
     { id: 'dashboard', label: 'Dashboard', icon: BarChart3 },
     { id: 'connections', label: 'Connections', icon: Database },
