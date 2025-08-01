@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Header from '/src/components/Header'; // Already correct as default import
+import Header from '/src/components/Header';
 import Sidebar from '/src/components/Sidebar';
 import MainContent from '/src/components/MainContent';
 import type { Stats, ConnectionStatus } from '/src/types';
@@ -19,7 +19,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <div className="app">
-        <Header stats={stats} setStats={setStats} />
+        <Header stats={stats} setStats={setStats} connectionStatus={connectionStatus} />
         <div className="main-layout">
           <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} stats={stats} />
           <MainContent
@@ -32,7 +32,5 @@ const App: React.FC = () => {
         </div>
       </div>
     </Router>
-  );
-};
-
-export default App;
+);
+}

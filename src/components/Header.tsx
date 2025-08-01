@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { Moon, Sun, CheckCircle, AlertCircle } from 'lucide-react';
+import ConnectionIndicator from './ConnectionIndicator';
 import type { HeaderProps, Stats } from '/src/types';
 import '/src/styles/Header.css';
 
-const Header: React.FC<HeaderProps> = ({ stats, setStats }) => {
+const Header: React.FC<HeaderProps> = ({ stats, setStats, connectionStatus }) => {
   useEffect(() => {
     fetch('/stats')
       .then(res => {
@@ -44,6 +45,7 @@ const Header: React.FC<HeaderProps> = ({ stats, setStats }) => {
         ))}
       </div>
       <div className="header-right">
+        <ConnectionIndicator status={connectionStatus} />
         <button className="theme-toggle-button" onClick={() => {
           const isDarkMode = document.documentElement.classList.toggle('dark');
           document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
