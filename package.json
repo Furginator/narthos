@@ -3,23 +3,25 @@
   "version": "0.3.0",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "build": "tsc && vite build --mode production",
+    "preview": "vite preview --mode production",
+    "install:dev": "npm install && npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin",
+    "install:prod": "npm install --production"
   },
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.6.4",
     "@testing-library/react": "^16.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^20.16.1",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.1.0",
     "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",
-    "lucide-react": "^0.534.0",
+    "lucide-react": "^0.536.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
+    "typescript": "^5.9.2",
+    "web-vitals": "^5.1.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.2",
