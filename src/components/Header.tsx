@@ -1,17 +1,18 @@
-import React, { useEffect } from 'react';
-import { Moon, Sun, CheckCircle, AlertCircle } from 'lucide-react';
-import type { HeaderProps, Stats } from '../types';
+import React, { useState, useEffect } from 'react';
+import { Settings, Moon, Sun, User, CheckCircle, AlertCircle } from 'lucide-react';
+import type { HeaderProps, Stats } from '/src/types';
 import '/src/styles/Header.css';
 
-const Header: React.FC<HeaderProps> = ({ stats, setStats }) => {
+const Header: React.FC<HeaderProps> = ({ stats, setStats, connectionStatus }) => {
   useEffect(() => {
     fetch('/stats')
       .then(res => res.json())
-      .then((data: Stats) => setStats(data)) // Explicitly type data as Stats
+      .then((data: Stats) => setStats(data))
       .catch(err => console.error('Stats fetch error:', err));
   }, [setStats]);
 
-  const getStatusColor = (value: string) => {
+  const getStatusColor = (value: string | number) => {
+    if (typeof value !== 'string') return 'red'; // Default for non-strings
     switch (value.toLowerCase()) {
       case 'connected': case 'online': return 'green';
       case 'connecting': return 'yellow';

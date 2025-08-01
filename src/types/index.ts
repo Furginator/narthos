@@ -80,9 +80,9 @@ export interface StatCardProps {
 
 export interface Stats {
   connectedDatabase: string;
-  activeModels: number;
-  componentsLoaded: number;
-  predictionsRun: number;
+  activeModels: number | string;
+  componentsLoaded: number | string;
+  predictionsRun: number | string;
 }
 
 export interface SystemStatusProps {
