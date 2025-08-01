@@ -4,33 +4,24 @@ Welcome to Narthos, a digital sanctuary where data and AI converge in a realm of
 <img width="2494" height="771" alt="narthos-1" src="https://github.com/user-attachments/assets/0d7e645f-5fc7-458c-8d54-96f9741fe8e3" />
 <img width="2494" height="759" alt="narthos-2" src="https://github.com/user-attachments/assets/7ed5a645-c7a7-46e3-a666-f1a4bf8a78f5" />
 
-## Setup
+## Installation
 
-### Frontend
-1. Install Node.js (>=20.19.0): https://nodejs.org
-2. Install dependencies: npm install
-3. Run the app: npm run dev
+### Development Setup
+1. Install Node.js >=20.19.0: `curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - && sudo apt-get install -y nodejs`
+2. Install Python 3/venv: `sudo apt-get install -y python3 python3-venv`
+3. Clone repo: `git clone https://github.com/Furginator/narthos.git`
+4. Navigate: `cd narthos`
+5. Create venv: `python3 -m venv venv`
+6. Activate venv: `source venv/bin/activate`
+7. Install dev deps: `npm run install:dev`
+8. Run: `npm run dev`[](http://localhost:5173)
 
-Access at http://localhost:5173.
-
-Backend
-
-Create and activate a Python virtual environment (>=3.8):python3 -m venv venv
-source venv/bin/activate
-
-
-Install dependencies:pip install -r backend/requirements.txt
-
-
-Run the backend:uvicorn backend:app --host 0.0.0.0 --port 8000
-
-
-
-Running in VS Code
-
-Install the Python extension in VS Code.
-Select the virtual environment: Ctrl+Shift+P > Python: Select Interpreter.
-Run both environments: Ctrl+Shift+B > Start All (uses .vscode/tasks.json).
+### Production Setup
+1. Follow steps 1-6.
+2. Install prod deps: `npm run install:prod`
+3. Build: `npm run build`
+4. Serve frontend: Use Nginx or similar.
+5. Run backend: `uvicorn backend:app --host 0.0.0.0 --port 8000`
 
 Structure
 
