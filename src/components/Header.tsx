@@ -28,7 +28,7 @@ const Header: React.FC<HeaderProps> = ({ stats, setStats, connectionStatus }) =>
     <header className="header">
       <div className="header-left">
         <div className="logo">
-          <img src="/narthos-logo.png" alt="Narthos Logo" className="logo-icon" />
+          <img src="/src/assets/narthos-logo.png" alt="Narthos Logo" className="logo-icon" />
         </div>
       </div>
       <div className="status-switchboard">
