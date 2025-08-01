@@ -13,7 +13,7 @@ Welcome to Narthos, a digital sanctuary where data and AI converge in a realm of
 4. Navigate: `cd narthos`
 5. Create venv: `python3 -m venv venv`
 6. Activate venv: `source venv/bin/activate`
-7. Install dev deps: `npm run install:dev`
+7. Install dev deps: `npm run install:dev` (includes TypeScript 5.8.3, etc.)
 8. Run: `npm run dev`[](http://localhost:5173)
 
 ### Production Setup
