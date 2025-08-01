@@ -12,7 +12,7 @@ export interface Stats {
 export interface HeaderProps {
   stats: Stats;
   setStats: (prevStats: Stats | ((prev: Stats) => Stats)) => void;
-  connectionStatus: ConnectionStatus; // Readded as per Option 1
+  connectionStatus: ConnectionStatus;
 }
 
 export interface ConnectionIndicatorProps {
@@ -40,7 +40,7 @@ export interface MainContentProps {
 
 export interface DashboardProps {
   stats: Stats;
-  connectionStatus: ConnectionStatus;
+  connectionStatus: ConnectionStatus; // Remove setStats
 }
 
 export interface StatCardProps {
