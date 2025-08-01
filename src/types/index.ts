@@ -1,33 +1,6 @@
 // src/types/index.ts
 export type ConnectionStatus = 'connected' | 'connecting' | 'disconnected';
-
-export interface QuickActionButtonProps {
-  icon: React.ReactNode;
-  label: string;
-  onClick: () => void;
-  disabled?: boolean;
-}
-
-export interface ExtendedQuickActionButtonProps extends QuickActionButtonProps {
-  // Add any additional props if needed
-}
-
-export interface SidebarProps {
-  activeTab: string;
-  setActiveTab: (tab: string) => void;
-  stats: Stats;
-}
-
-export interface ConnectionIndicatorProps {
-  status: string;
-}
-
-export interface ConnectionManagerProps {
-  connectionStatus: ConnectionStatus;
-  setConnectionStatus: (status: ConnectionStatus) => void;
-  stats: Stats;
-  setStats: (prevStats: Stats | ((prev: Stats) => Stats)) => void;
-}
+export type SystemItemStatus = 'healthy' | 'disabled' | 'disconnected' | 'connecting' | 'pending';
 
 export interface ConnectionForm {
   host: string;
@@ -37,6 +10,22 @@ export interface ConnectionForm {
   password: string;
 }
 
+export interface ConnectionIndicatorProps {
+  status: ConnectionStatus;
+}
+
+export interface ConnectionManagerProps {
+  connectionStatus: ConnectionStatus;
+  setConnectionStatus: (status: ConnectionStatus) => void;
+  stats: Stats;
+  setStats: React.Dispatch<React.SetStateAction<Stats>>;
+}
+
+export interface DashboardProps {
+  stats: Stats;
+  connectionStatus: ConnectionStatus;
+}
+
 export interface DatabaseProvider {
   id: string;
   name: string;
@@ -44,49 +33,58 @@ export interface DatabaseProvider {
   defaultPort: string;
 }
 
-export interface Stats {
-  connectedDatabase: string;
-  activeModels: number | string;
-  componentsLoaded: number | string;
-  predictionsRun: number | string;
+export interface ExtendedQuickActionButtonProps extends QuickActionButtonProps {
+  // Add any additional props if needed
 }
 
-export interface ModelManagerProps {
+export interface HeaderProps {
+  connectionStatus: ConnectionStatus;
   stats: Stats;
   setStats: (prevStats: Stats | ((prev: Stats) => Stats)) => void;
 }
 
-export interface StatCardProps {
-  title: string;
-  value: number | string | React.ReactNode;
-  icon: React.ComponentType<any>;
-  color: string;
+export interface MainContentProps {
+  activeTab: string;
+  connectionStatus: ConnectionStatus;
+  setConnectionStatus: (status: ConnectionStatus) => void;
+  stats: Stats;
+  setStats: React.Dispatch<React.SetStateAction<Stats>>;
+}
+
+export interface ModelManagerProps {
+  stats: Stats;
+  setStats: React.Dispatch<React.SetStateAction<Stats>>;
+}
+
+export interface QuickActionButtonProps {
+  icon: React.ComponentType<{ className?: string }>;
+  label: string;
 }
 
 export interface RecentActivityProps {
   activities: string[];
 }
 
-export interface SystemStatusProps {
-  connectionStatus: string;
-}
-
-export interface HeaderProps {
-  stats: Stats;
-  setStats: (prevStats: Stats | ((prev: Stats) => Stats)) => void;
-  connectionStatus: ConnectionStatus; // Added to match NarthosGUI
-}
-
-export interface DashboardProps {
-  stats: Stats;
-  setStats: (prevStats: Stats | ((prev: Stats) => Stats)) => void;
-  connectionStatus: string;
-}
-
-export interface MainContentProps {
+export interface SidebarProps {
   activeTab: string;
-  connectionStatus: ConnectionStatus; // Updated to match useState type
-  setConnectionStatus: (status: ConnectionStatus) => void; // Updated to match useState setter
+  setActiveTab: (tab: string) => void;
   stats: Stats;
-  setStats: (prevStats: Stats | ((prev: Stats) => Stats)) => void;
+}
+
+export interface StatCardProps {
+  title: string;
+  value: string | number;
+  icon: React.ComponentType<{ className?: string }>;
+  color: 'blue' | 'green' | 'purple' | 'orange';
+}
+
+export interface Stats {
+  connectedDatabase: string;
+  activeModels: number;
+  componentsLoaded: number;
+  predictionsRun: number;
+}
+
+export interface SystemStatusProps {
+  connectionStatus: ConnectionStatus;
 }

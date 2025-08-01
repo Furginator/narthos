@@ -4,7 +4,7 @@ import Header from '/src/components/Header';
 import Sidebar from '/src/components/Sidebar';
 import MainContent from '/src/components/MainContent';
 import type { Stats, ConnectionStatus } from '/src/types';
-import './index.css'; // Align with main.tsx
+import './index.css';
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -19,9 +19,9 @@ const App: React.FC = () => {
   return (
     <Router>
       <div className="app">
-        <Header connectionStatus={connectionStatus} />
+        <Header connectionStatus={connectionStatus} stats={stats} setStats={setStats} />
         <div className="main-layout">
-          <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
+          <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} stats={stats} />
           <MainContent
             activeTab={activeTab}
             connectionStatus={connectionStatus}
