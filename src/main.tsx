@@ -4,7 +4,7 @@ import App from './App';
 import './index.css';
 
 class ErrorBoundary extends React.Component<{ children: React.ReactNode }, { hasError: boolean; error: Error | null }> {
-  state = { hasError: false, error: null as Error | null }; // Explicitly typed initial value
+  state = { hasError: false, error: null as Error | null };
 
   static getDerivedStateFromError(error: Error) {
     return { hasError: true, error };
