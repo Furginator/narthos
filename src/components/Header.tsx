@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Settings, Moon, Sun, User, CheckCircle, AlertCircle } from 'lucide-react';
+import React, { useEffect } from 'react'; // Remove useState
+import { Moon, Sun, CheckCircle, AlertCircle } from 'lucide-react'; // Remove Settings, User
 import type { HeaderProps, Stats } from '/src/types';
 import '/src/styles/Header.css';
 
@@ -12,7 +12,7 @@ const Header: React.FC<HeaderProps> = ({ stats, setStats, connectionStatus }) =>
   }, [setStats]);
 
   const getStatusColor = (value: string | number) => {
-    if (typeof value !== 'string') return 'red'; // Default for non-strings
+    if (typeof value !== 'string') return 'red';
     switch (value.toLowerCase()) {
       case 'connected': case 'online': return 'green';
       case 'connecting': return 'yellow';
@@ -47,7 +47,7 @@ const Header: React.FC<HeaderProps> = ({ stats, setStats, connectionStatus }) =>
         }} aria-label={document.documentElement.classList.contains('dark') ? 'Switch to light mode' : 'Switch to dark mode'}>
           {document.documentElement.classList.contains('dark') ? <Sun className="theme-icon" /> : <Moon className="theme-icon" />}
         </button>
-        {/* ... rest of component ... */}
+        {/* Optionally use connectionStatus if needed, e.g., <ConnectionIndicator status={connectionStatus} /> */}
       </div>
     </header>
   );
