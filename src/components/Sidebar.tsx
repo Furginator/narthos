@@ -39,4 +39,5 @@ const Sidebar: React.FC<SidebarProps> = ({ setActiveTab }) => {
   );
 };
 
+// ... (existing code)
 export default Sidebar;

@@ -37,4 +37,5 @@ const MainContent: React.FC<MainContentProps> = ({ activeTab, connectionStatus, 
   );
 };
 
+// ... (existing code)
 export default MainContent;

@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react'; // Remove useState
-import { Moon, Sun, CheckCircle, AlertCircle } from 'lucide-react'; // Remove Settings, User
+import React, { useEffect } from 'react';
+import { Moon, Sun, CheckCircle, AlertCircle } from 'lucide-react';
 import type { HeaderProps, Stats } from '/src/types';
 import '/src/styles/Header.css';
 
-const Header: React.FC<HeaderProps> = ({ stats, setStats, connectionStatus }) => {
+const Header: React.FC<HeaderProps> = ({ stats, setStats }) => {
   useEffect(() => {
     fetch('/stats')
       .then(res => res.json())
@@ -47,10 +47,9 @@ const Header: React.FC<HeaderProps> = ({ stats, setStats, connectionStatus }) =>
         }} aria-label={document.documentElement.classList.contains('dark') ? 'Switch to light mode' : 'Switch to dark mode'}>
           {document.documentElement.classList.contains('dark') ? <Sun className="theme-icon" /> : <Moon className="theme-icon" />}
         </button>
-        {/* Optionally use connectionStatus if needed, e.g., <ConnectionIndicator status={connectionStatus} /> */}
       </div>
     </header>
   );
 };
 
-export default Header;
+export default Header; // Add default export
