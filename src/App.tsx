@@ -4,7 +4,7 @@ import Header from '/src/components/Header';
 import Sidebar from '/src/components/Sidebar';
 import MainContent from '/src/components/MainContent';
 import type { Stats, ConnectionStatus } from '/src/types';
-import './App.css'; // Move CSS import here
+import './index.css'; // Align with main.tsx
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState('dashboard');
