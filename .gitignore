@@ -30,3 +30,4 @@ dist
 dist-ssr
 *.local
 src/vite-env.d.ts
+eslint.config.js
