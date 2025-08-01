@@ -1,31 +1,9 @@
 {
+  "extends": "./tsconfig.app.json",
+  "include": ["src", "vite.config.ts"],
   "compilerOptions": {
+    "baseUrl": "src",
     "types": ["vite/client"],
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.tsbuildinfo",
-    "target": "ES2022",
-    "lib": ["ES2022", "DOM"],
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
-    "moduleDetection": "force",
-    "noEmit": true,
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true,
-    "skipLibCheck": true,
-    "jsx": "react-jsx",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "baseUrl": ".",
-    "paths": {
-      "/src/*": ["src/*"]
-    }
-  },
-  "include": ["src/**/*", "vite.config.ts"],
-  "exclude": ["node_modules"]
+    "typeRoots": ["./node_modules/@types", "./src/styles"]
+  }
 }

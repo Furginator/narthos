@@ -1,0 +1,4 @@
+fastapi
+uvicorn
+superduper-framework
+pydantic

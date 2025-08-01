@@ -1,0 +1,2 @@
+.header { padding: 16px; background: white; display: flex; justify-content: space-between; }
+.dark .header { background: #1f2937; color: #f9fafb; }

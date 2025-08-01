@@ -1,0 +1,97 @@
+.model-manager {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.model-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.model-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.create-model-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.button-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.model-form {
+  margin-bottom: 24px;
+}
+
+.model-list {
+  margin-top: 24px;
+}
+
+.model-list-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.model-list-items {
+  list-style: none;
+  padding: 0;
+}
+
+.model-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.delete-icon {
+  color: #ef4444;
+  width: 20px;
+  height: 20px;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.empty-state-icon {
+  width: 48px;
+  height: 48px;
+  color: #6b7280;
+}
+
+.empty-state-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.empty-state-text {
+  font-size: 14px;
+  color: #6b7280;
+  text-align: center;
+}

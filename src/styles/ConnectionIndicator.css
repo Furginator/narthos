@@ -1,0 +1,50 @@
+.connection-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  position: relative;
+}
+
+.connection-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.connection-text {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.pulse-green {
+  animation: pulse 2s infinite;
+}
+
+.pulse-yellow {
+  animation: pulse 2s infinite;
+}
+
+.pulse-red {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #374151;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 100;
+}
