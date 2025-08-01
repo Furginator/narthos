@@ -32,5 +32,7 @@ const App: React.FC = () => {
         </div>
       </div>
     </Router>
-);
-}
+  );
+};
+
+export default App;
