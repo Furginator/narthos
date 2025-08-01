@@ -41,10 +41,10 @@ async def get_stats():
         client = MongoClient("mongodb://localhost:27017/")
         db = client["narthos_db"]
         return {
-            "connection": "connected" if client.server_info() else "disconnected",
-            "count": db.test_collection.count_documents({}),
-            "cpu": "75%",  # Placeholder, replace with system stats later
-            "memory": "65%"  # Placeholder
+            "connectedDatabase": "narthos_db",
+            "activeModels": 5,
+            "componentsLoaded": 3,
+            "predictionsRun": 10
         }
     except Exception as e:
         return {"status": "error", "message": str(e)}

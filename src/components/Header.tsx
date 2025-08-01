@@ -6,9 +6,12 @@ import '/src/styles/Header.css';
 const Header: React.FC<HeaderProps> = ({ stats, setStats }) => {
   useEffect(() => {
     fetch('/stats')
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        return res.json();
+      })
       .then((data: Stats) => setStats(data))
-      .catch(err => console.error('Stats fetch error:', err));
+      .catch(err => console.error('Stats fetch error:', err.message || err));
   }, [setStats]);
 
   const getStatusColor = (value: string | number) => {
@@ -52,4 +55,4 @@ const Header: React.FC<HeaderProps> = ({ stats, setStats }) => {
   );
 };
 
-export default Header; // Add default export
+export default Header;
