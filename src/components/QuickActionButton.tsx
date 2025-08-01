@@ -1,19 +1,12 @@
 import React from 'react';
-import type { QuickActionButtonProps } from '../types';
+import type { QuickActionButtonProps } from '/src/types';
 import '/src/styles/QuickActionButton.css';
 
-const QuickActionButton: React.FC<QuickActionButtonProps> = ({ icon, label, onClick, disabled = false }) => {
-  return (
-    <button
-      className="quick-action-button"
-      onClick={onClick}
-      disabled={disabled}
-      aria-label={label}
-    >
-      {icon}
-      <span className="button-label">{label}</span>
-    </button>
-  );
-};
+const QuickActionButton: React.FC<QuickActionButtonProps> = ({ icon, label }) => (
+  <button className="quick-action-button">
+    {React.isValidElement(icon) ? icon : <icon className="quick-action-icon" />}
+    <span>{label}</span>
+  </button>
+);
 
 export default QuickActionButton;

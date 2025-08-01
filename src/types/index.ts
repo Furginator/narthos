@@ -26,7 +26,7 @@ export interface SidebarProps {
 }
 
 export interface QuickActionButtonProps {
-  icon: React.ComponentType<{ className?: string }>;
+  icon: React.ComponentType<{ className?: string }> | React.ReactNode; // Allow elements or components
   label: string;
 }
 
@@ -40,7 +40,7 @@ export interface MainContentProps {
 
 export interface DashboardProps {
   stats: Stats;
-  connectionStatus: ConnectionStatus; // Remove setStats
+  connectionStatus: ConnectionStatus;
 }
 
 export interface StatCardProps {

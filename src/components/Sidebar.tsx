@@ -1,43 +1,48 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { ChartColumn, Database, Brain, Table, Zap, FileText } from 'lucide-react';
-import type { SidebarProps } from '../types';
-import '/src/styles/Sidebar.css';
+import { BarChart3, Database, Brain, FileText, Zap, Terminal } from 'lucide-react';
 import QuickActionButton from './QuickActionButton';
+import type { SidebarProps, Stats } from '/src/types';
+import '/src/styles/Sidebar.css';
 
-const Sidebar: React.FC<SidebarProps> = ({ setActiveTab }) => {
-  const tabs = [
-    { path: '/dashboard', icon: ChartColumn, label: 'Dashboard' },
-    { path: '/connections', icon: Database, label: 'Connections' },
-    { path: '/models', icon: Brain, label: 'Models' },
-    { path: '/data', icon: Table, label: 'Data' },
-    { path: '/predictions', icon: Zap, label: 'Predictions' },
-    { path: '/logs', icon: FileText, label: 'Logs' },
+const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, stats }) => {
+  const navigation = [
+    { id: 'dashboard', label: 'Dashboard', icon: BarChart3 },
+    { id: 'connections', label: 'Connections', icon: Database },
+    { id: 'models', label: 'Models', icon: Brain },
+    { id: 'data', label: 'Data', icon: FileText },
+    { id: 'predictions', label: 'Predictions', icon: Zap },
+    { id: 'logs', label: 'Logs', icon: Terminal },
   ];
 
   return (
     <aside className="sidebar">
       <nav className="nav">
-        {tabs.map(({ path, icon: Icon, label }) => (
-          <NavLink
-            key={path}
-            to={path}
-            className={({ isActive }: { isActive: boolean }) => `nav-button ${isActive ? 'nav-button-active' : ''}`}
-            onClick={() => setActiveTab(label.toLowerCase())}
-          >
-            <Icon className="nav-icon" />
-            <span>{label}</span>
-          </NavLink>
-        ))}
-        <QuickActionButton
-          icon={<ChartColumn />}
-          label="Quick Action"
-          onClick={() => alert('Action triggered')}
-        />
+        {navigation.map((item) => {
+          const Icon = item.icon;
+          const isActive = activeTab === item.id;
+          return (
+            <button
+              key={item.id}
+              onClick={() => setActiveTab(item.id)}
+              className={`nav-button ${isActive ? 'nav-button-active' : 'nav-button-inactive'}`}
+            >
+              <Icon className="nav-icon" />
+              <span>{item.label}</span>
+            </button>
+          );
+        })}
       </nav>
+      <div className="quick-actions">
+        <h3 className="quick-actions-title">Quick Actions</h3>
+        <div className="quick-actions-container">
+          <QuickActionButton icon={<Plus />} label="Create Model" />
+          <QuickActionButton icon={<Play />} label="Run Prediction" />
+          <QuickActionButton icon={<Search />} label="Query Database" />
+          <QuickActionButton icon={<Upload />} label="Upload Data" />
+        </div>
+      </div>
     </aside>
   );
 };
 
-// ... (existing code)
 export default Sidebar;
