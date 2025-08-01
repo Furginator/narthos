@@ -21,7 +21,6 @@ lerna-debug.log*
 bin
 lib
 lib64
-public
 pyvenv.cfg
 etc
 share
