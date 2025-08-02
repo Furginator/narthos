@@ -28,7 +28,6 @@ Structure
 src/components/: React components (NarthosGUI.tsx, Header.tsx, etc.).
 src/styles/: Component-specific CSS (App.css, Header.css, etc.).
 src/types/: TypeScript type definitions (index.ts).
-src/main.tsx: Entry point for the Vite app.
 backend/: FastAPI backend (backend.py, requirements.txt).
 public/: Static assets (index.html, favicon.ico, manifest.json).
 
