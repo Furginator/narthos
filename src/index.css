@@ -18,5 +18,3 @@
   display: flex;
   flex: 1;
 }
-
-/* Add component-specific styles as needed (e.g., .header, .sidebar) from App.tsx subcomponents */

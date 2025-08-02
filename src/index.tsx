@@ -6,7 +6,7 @@ import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import MainContent from './components/MainContent';
 import type { Stats, ConnectionStatus } from './types';
-import './index.css'; // Merged CSS
+import './index.css';
 
 const NarthosGUI = () => {
   const [activeTab, setActiveTab] = useState<string>('dashboard');
