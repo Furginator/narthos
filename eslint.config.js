@@ -7,7 +7,7 @@ import tsParser from '@typescript-eslint/parser';
 
 export default [
   {
-    ignores: ['dist'],
+    ignores: ['dist', 'lib/python3.11/site-packages/jupyterlab/**', 'lib/python3.11/site-packages/notebook/**'],
   },
   {
     files: ['**/*.{ts,tsx}'],

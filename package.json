@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "tsc && vite build --mode production",
     "preview": "vite preview --mode production",
-    "install:dev": "npm install && npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-react-hooks eslint-plugin-react-refresh globals",
+    "install:dev": "npm install && npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-refresh globals",
     "install:prod": "npm install --production"
   },
   "dependencies": {
@@ -28,10 +28,11 @@
     "@typescript-eslint/parser": "^8.38.0",
     "@vitejs/plugin-react": "^4.3.2",
     "eslint": "^9.32.0",
+    "typescript": "^5.8.3",
+    "vite": "^7.0.6",
+    "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
-    "globals": "^15.15.0",
-    "typescript": "^5.8.3",
-    "vite": "^7.0.6"
+    "globals": "^15.9.0"
   }
 }
