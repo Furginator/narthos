@@ -1,5 +1,4 @@
 /* src/index.css */
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 .app {
@@ -19,3 +18,5 @@
   display: flex;
   flex: 1;
 }
+
+/* Add component-specific styles as needed (e.g., .header, .sidebar) from App.tsx subcomponents */

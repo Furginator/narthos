@@ -1,3 +1,5 @@
+// /src/Dashboard.tsx
+
 import React from 'react';
 import { Database, Brain, Settings, Zap, CheckCircle } from 'lucide-react';
 import type { DashboardProps } from '../types';
