@@ -23,7 +23,7 @@ const NarthosGUI = () => {
       <div className="app">
         <Header connectionStatus={connectionStatus} />
         <div className="main-layout">
-          <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
+          <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} stats={{ activeModels: stats.activeModels }} />
           <MainContent
             activeTab={activeTab}
             connectionStatus={connectionStatus}

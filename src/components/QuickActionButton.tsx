@@ -1,3 +1,4 @@
+// src/components/QuickActionButton.tsx
 import React, { useState } from 'react';
 import type { QuickActionButtonProps } from '../types';
 import '/src/styles/QuickActionButton.css';

@@ -1,48 +1,63 @@
+// src/components/Sidebar.tsx
 import React, { useState } from 'react';
-import type { StatCardProps } from '../types';
-import '/src/styles/StatCard.css';
+import { BarChart3, Database, Brain, FileText, Zap, Terminal, Plus, Play, Search, Upload, ChevronLeft, ChevronRight } from 'lucide-react';
+import type { SidebarProps } from '../types';
+import QuickActionButton from './QuickActionButton';
+import '/src/styles/Sidebar.css';
 
-const StatCard: React.FC<StatCardProps> = ({ title, value, icon: Icon, color }) => {
-  const [showTooltip, setShowTooltip] = useState(false);
-
-  const getColorConfig = (color: string) => {
-    switch (color) {
-      case 'blue': return 'stat-icon-blue';
-      case 'green': return 'stat-icon-green';
-      case 'purple': return 'stat-icon-purple';
-      case 'orange': return 'stat-icon-orange';
-      default: return 'stat-icon-default';
+const Sidebar: React.FC<SidebarProps & { stats: { activeModels: number } }> = ({ activeTab, setActiveTab, stats }) => {
+  const [isCollapsed, setIsCollapsed] = useState(false);
+  const navigation = [
+    { id: 'dashboard', label: 'Dashboard', icon: BarChart3 },
+    { id: 'connections', label: 'Connections', icon: Database },
+    { id: 'models', label: 'Models', icon: Brain, badge: stats.activeModels },
+    { id: 'data', label: 'Data', icon: FileText },
+    { id: 'predictions', label: 'Predictions', icon: Zap },
+    { id: 'logs', label: 'Logs', icon: Terminal },
+  ];
+  const handleQuickAction = (action: string) => {
+    switch (action) {
+      case 'Create Model': setActiveTab('models'); break;
+      case 'Run Prediction': setActiveTab('predictions'); break;
+      case 'Query Database': alert('Query Database not implemented yet'); break;
+      case 'Upload Data': alert('Upload Data not implemented yet'); break;
     }
   };
-
-  const getDetails = (title: string) => {
-    switch (title) {
-      case 'Database': return `Connected to ${value || 'None'}`;
-      case 'Active Models': return `${value || 0} models loaded`;
-      case 'Components': return `${value || 0} components active`;
-      case 'Predictions': return `${value || 0} predictions executed`;
-      default: return '';
-    }
-  };
-
   return (
-    <div
-      className="stat-card"
-      onMouseEnter={() => setShowTooltip(true)}
-      onMouseLeave={() => setShowTooltip(false)}
-    >
-      <div className="stat-card-header">
-        <div>
-          <p className="stat-title">{title}</p>
-          <p className="stat-value">{value}</p>
+    <aside className={`sidebar ${isCollapsed ? 'sidebar-collapsed' : ''}`}>
+      <button className="collapse-button" onClick={() => setIsCollapsed(!isCollapsed)} aria-label={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}>
+        {isCollapsed ? <ChevronRight className="collapse-icon" /> : <ChevronLeft className="collapse-icon" />}
+      </button>
+      <nav className="nav">
+        {navigation.map((item) => {
+          const Icon = item.icon;
+          const isActive = activeTab === item.id;
+          return (
+            <button key={item.id} onClick={() => setActiveTab(item.id)} className={`nav-button ${isActive ? 'nav-button-active' : 'nav-button-inactive'}`} aria-label={item.label}>
+              <Icon className="nav-icon" />
+              {!isCollapsed && (
+                <span className="nav-label">
+                  {item.label}
+                  {item.badge !== undefined && item.badge > 0 && <span className="badge">{item.badge}</span>}
+                </span>
+              )}
+            </button>
+          );
+        })}
+      </nav>
+      {!isCollapsed && (
+        <div className="quick-actions">
+          <h3 className="quick-actions-title">Quick Actions</h3>
+          <div className="quick-actions-container">
+            <QuickActionButton icon={Plus} label="Create Model" onClick={() => handleQuickAction('Create Model')} />
+            <QuickActionButton icon={Play} label="Run Prediction" onClick={() => handleQuickAction('Run Prediction')} />
+            <QuickActionButton icon={Search} label="Query Database" onClick={() => handleQuickAction('Query Database')} />
+            <QuickActionButton icon={Upload} label="Upload Data" onClick={() => handleQuickAction('Upload Data')} />
+          </div>
         </div>
-        <div className={`stat-icon ${getColorConfig(color)}`}>
-          <Icon className="icon" />
-        </div>
-      </div>
-      {showTooltip && <div className="stat-tooltip">{getDetails(title)}</div>}
-    </div>
+      )}
+    </aside>
   );
 };
 
-export default StatCard;
+export default Sidebar;

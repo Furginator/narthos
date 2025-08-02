@@ -1,3 +1,4 @@
+// src/types/index.ts
 export type ConnectionStatus = 'connected' | 'connecting' | 'disconnected';
 export type SystemItemStatus = 'healthy' | 'disabled' | 'disconnected' | 'connecting' | 'pending';
 
@@ -19,13 +20,13 @@ export interface ConnectionIndicatorProps {
 export interface SidebarProps {
   activeTab: string;
   setActiveTab: (tab: string) => void;
-  stats?: { activeModels: number }; // Add stats prop
+  stats: { activeModels: number };
 }
 
 export interface QuickActionButtonProps {
   icon: React.ComponentType<{ className?: string }>;
   label: string;
-  onClick?: () => void;
+  onClick?: () => void; // Updated prop
 }
 
 export interface MainContentProps {
